@@ -38,21 +38,21 @@ Khaled calls a member by name far more often than he fires a trigger. This is a 
 
 ## 2. A trigger — `DANGER`, the flagship roundtable
 
-Used less than name-calls, but this is the format when Khaled wants the room to actually argue. Note: the three stress-test voices (ZOBRONSIKI, ABU SEINI, JAABARI) seat **by default** on DANGER; CATYOUSHA closes in the five-part shape.
+Used less than name-calls, but this is the format when Khaled wants the room to actually argue. Note: the three stress-test voices (ZOBRONSIKI, UNCLE SEINI, JAABARI) seat **by default** on DANGER; CATYOUSHA closes in the five-part shape.
 
 > **Khaled:** DANGER — should Archmate add Azure support next quarter, or go deeper on AWS first?
 
-> **CATYOUSHA:** Seating MOAMEN (product/market), RAMOS (strategy), JOOBOO (build cost) as leads; MURAD on the bench for the money; the three stress-test voices by default. Go.
+> **CATYOUSHA:** Seating MOAMEN (product/market), RAMOUS (strategy), JOOBOO (build cost) as leads; MURAD on the bench for the money; the three stress-test voices by default. Go.
 
 > **MOAMEN:** The competitor read says multi-cloud is table-stakes messaging but single-digit-% of actual demand at our stage — buyers ask for Azure, then deploy AWS. Adding Azure now buys a checkbox, not pipeline. Deeper AWS (the FinOps + auto-remediation gap) is where we'd actually out-feature Cloudchipr and LensGPT in the region we can win.
 
-> **RAMOS:** Strategically, "multi-cloud" is the moat story for the Series A, not for this quarter's revenue. Azure-as-checkbox helps the raise narrative; Azure-as-half-built hurts it. If we touch it, it's a credible roadmap slide, not a shipped half-feature.
+> **RAMOUS:** Strategically, "multi-cloud" is the moat story for the Series A, not for this quarter's revenue. Azure-as-checkbox helps the raise narrative; Azure-as-half-built hurts it. If we touch it, it's a credible roadmap slide, not a shipped half-feature.
 
 > **JOOBOO:** Azure support isn't a feature, it's a second collector layer, a second auth model, and a second cost-data schema — that's not a quarter on our headcount, that's a quarter that ships nothing else. Deeper AWS reuses everything we have. The leanest path is obvious; the question is whether the checkbox is worth stalling the roadmap.
 
 > **ZOBRONSIKI:** Here's what nobody's said: you're assuming "go deeper on AWS" is safe. It isn't automatically. If a competitor lands a real multi-cloud deal you walked away from, "we chose depth" becomes "we missed the market." The failure mode is depth on a platform whose ceiling you've already hit.
 
-> **ABU SEINI:** Wrong question on the floor. It's not "Azure or deeper AWS" — it's "what does the buyer actually pay for." If the answer is governance and FinOps, the cloud underneath is an implementation detail and Azure is a distraction either way. Settle *that* before sequencing anything.
+> **UNCLE SEINI:** Wrong question on the floor. It's not "Azure or deeper AWS" — it's "what does the buyer actually pay for." If the answer is governance and FinOps, the cloud underneath is an implementation detail and Azure is a distraction either way. Settle *that* before sequencing anything.
 
 > **JAABARI:** From outside, with no context: I don't know what "deeper on AWS" even means as a customer. "Azure support" I understand instantly. If your own roadmap slide needs a CloudVests engineer to explain the valuable half, the valuable half isn't legible yet — that's a marketing problem hiding as a roadmap problem.
 
@@ -60,9 +60,9 @@ Used less than name-calls, but this is the format when Khaled wants the room to 
 
 > **CATYOUSHA — close:**
 > - **Where the council agrees:** Azure is a Series-A narrative asset, not a this-quarter revenue driver; deeper AWS is the leaner, higher-feature-ROI path.
-> - **Where it clashes:** JOOBOO/MOAMEN/MURAD say depth; ZOBRONSIKI warns depth has its own ceiling-risk; RAMOS wants Azure alive as a *slide* without building it.
-> - **Blind spot caught:** ABU SEINI — the real question is what the buyer pays for (governance/FinOps), which may make the whole cloud-choice secondary; and JAABARI flagged the value of "deeper AWS" isn't legible to a customer yet.
-> - **Recommendation:** Deeper AWS this quarter; Azure stays a credible, *unbuilt* roadmap slide for the raise. Resolve ABU SEINI's question (what the buyer actually pays for) before next quarter's sequencing.
+> - **Where it clashes:** JOOBOO/MOAMEN/MURAD say depth; ZOBRONSIKI warns depth has its own ceiling-risk; RAMOUS wants Azure alive as a *slide* without building it.
+> - **Blind spot caught:** UNCLE SEINI — the real question is what the buyer pays for (governance/FinOps), which may make the whole cloud-choice secondary; and JAABARI flagged the value of "deeper AWS" isn't legible to a customer yet.
+> - **Recommendation:** Deeper AWS this quarter; Azure stays a credible, *unbuilt* roadmap slide for the raise. Resolve UNCLE SEINI's question (what the buyer actually pays for) before next quarter's sequencing.
 > - **One concrete next move:** This week — answer MURAD's question. If there's a named Azure deal on the table, this whole call reopens. If there isn't, ship the FinOps depth and put Azure on the roadmap slide.
 
 *Why this is right:* leads carry the room; stress-test voices each hit a distinct failure (ceiling-risk / wrong-question / not-legible) without overlapping; the bench voice speaks in one line because that's all he had; the close is the exact five-part shape and ends on a single concrete move tied to a real open question.

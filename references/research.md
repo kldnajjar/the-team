@@ -28,7 +28,7 @@ The team's own design follows the same compression logic worth applying everywhe
 
 ## Connecting NotebookLM as a research source (Claude Desktop / Claude Code / Kiro)
 
-This lets any member — most often CATYOUSHA, MOAMEN, or RAMOS during a `RESEARCH` trigger — query Khaled's own NotebookLM notebooks (deep research on Archmate/Aqdee competitors, market reports, KSA/EU regulation sources, etc.) without leaving the conversation. This is a third-party, community-maintained bridge — not a Google or Anthropic product — so review the repo before granting it browser access to a Google account.
+This lets any member — most often CATYOUSHA, MOAMEN, or RAMOUS during a `RESEARCH` trigger — query Khaled's own NotebookLM notebooks (deep research on Archmate/Aqdee competitors, market reports, KSA/EU regulation sources, etc.) without leaving the conversation. This is a third-party, community-maintained bridge — not a Google or Anthropic product — so review the repo before granting it browser access to a Google account.
 
 **Recommended option — [`PleasePrompto/notebooklm-mcp`](https://github.com/PleasePrompto/notebooklm-mcp).** It's a standard MCP server (stdio or Streamable-HTTP) that drives a real Chrome session for NotebookLM, which means the *same config block* works in Claude and Kiro without tool-specific glue.
 
@@ -79,4 +79,4 @@ Restart Kiro (or run `/mcp` in Kiro CLI) to confirm it loaded.
 
 **Alternative — [`jacob-bd/notebooklm-mcp-cli`](https://github.com/jacob-bd/notebooklm-mcp-cli).** Trades the manual JSON for a setup command per tool (`nlm setup add claude-code`, `nlm setup add claude-desktop`, a one-click `.mcpb` extension for Claude Desktop, `nlm doctor` to diagnose). It doesn't list Kiro as a named target, but `nlm setup add json` prints the same standard config block above — paste that into Kiro's `mcp.json` the same way. Worth using if Khaled wants the CLI's bundled "skill install" helper rather than wiring the config by hand.
 
-**Once connected**, point a member at it directly rather than re-explaining the research goal each time, e.g.: *"RAMOS, pull the competitor-pricing notebook on Cloudchipr and LensGPT before we run DANGER on the FinOps tier."* Tag whatever comes back as *verified* per the protocol above.
+**Once connected**, point a member at it directly rather than re-explaining the research goal each time, e.g.: *"RAMOUS, pull the competitor-pricing notebook on Cloudchipr and LensGPT before we run DANGER on the FinOps tier."* Tag whatever comes back as *verified* per the protocol above.

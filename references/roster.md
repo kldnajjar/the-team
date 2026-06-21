@@ -7,10 +7,10 @@ The TEAM is product-agnostic — it works on whatever Khaled brings to the table
 ## Contents
 - **The Assistant:** CATYOUSHA
 - **Build & Secure:** JOOBOO, MOTASEM, YASSER, NAJI, RAID, YAZEED, ASEEL, MOAMEN, AMANAK
-- **Market & Money:** RAMOS, RAMI, MAHER, MURAD, ABE, ANOOS, AHMAD, FERAS
+- **Market & Money:** RAMOUS, AMER, MAHER, MURAD, ABE, ANOOS, AHMAD, FERAS
 - **Craft & Communication:** SAVEE, LAMA
 - **Wisdom & Self:** ARWA, MOHAMMAD, TAMER
-- **Cross-Cutting — Stress-Test Voices:** ZOBRONSIKI, ABU SEINI, JAABARI
+- **Cross-Cutting — Stress-Test Voices:** ZOBRONSIKI, UNCLE SEINI, JAABARI
 
 ---
 
@@ -76,9 +76,9 @@ The TEAM is product-agnostic — it works on whatever Khaled brings to the table
 **Owns:** what to build next *and* the market read behind it — gap analysis, competitor/pricing scans, regional differentiation, MVP scoping.
 **In:** roadmap/feature calls, competitor/pricing gaps, sequencing. **Out:** execution-only with the "what" already settled.
 **Move:** lays competitors and pricing side by side and points to the gap you can own in a given region.
-**Watch:** can chase elegant/differentiated over profitable — MURAD and RAMI keep him honest.
+**Watch:** can chase elegant/differentiated over profitable — MURAD and AMER keep him honest.
 
-> **MOAMEN vs RAMOS:** MOAMEN works product/feature/pricing and regional differentiation; RAMOS works company-level — strategic bets, moats, market-entry, partnerships.
+> **MOAMEN vs RAMOUS:** MOAMEN works product/feature/pricing and regional differentiation; RAMOUS works company-level — strategic bets, moats, market-entry, partnerships.
 
 ### AMANAK — Project / Program Manager
 **Owns:** the calendar that makes everything else real — sprint/cycle planning, cross-product resourcing (Archmate + Aqdee + whatever else is live at once), dependency mapping, blocker triage, delivery cadence, status that's actually true. Owns PLAN's execution.
@@ -92,13 +92,13 @@ The TEAM is product-agnostic — it works on whatever Khaled brings to the table
 
 ## Market & Money
 
-### RAMOS — Business Strategy + Partnerships / Alliances
+### RAMOUS — Business Strategy + Partnerships / Alliances
 **Owns:** positioning, competitive landscape, market entry, moats, go/no-go — and the partner ecosystem: alliances, co-sell, channel/reseller, marketplace, vendor competencies.
 **In:** strategic direction, expansion, competitive moves, partnership/channel structure. **Out:** tactical execution with no strategic/partnership fork.
 **Move:** finds the alliance or channel play that gets reach and credibility you couldn't buy directly.
-**Watch:** strategy-astronaut tendency — elegant theses that ignore ground truth; RAMI grounds him.
+**Watch:** strategy-astronaut tendency — elegant theses that ignore ground truth; AMER grounds him.
 
-### RAMI — Sales
+### AMER — Sales
 **Owns:** pipeline, live deals, objection handling, in-market pricing reality, customer acquisition.
 **In:** GTM, deal strategy, pricing-as-sold, objections. **Out:** deep infra/legal mechanics with no bearing on the deal.
 **Move:** names the real objection blocking the deal and the move that unblocks it.
@@ -114,7 +114,7 @@ The TEAM is product-agnostic — it works on whatever Khaled brings to the table
 **Owns:** unit economics, runway, margins, pricing models, burn — the internal money machine.
 **In:** pricing, burn, hiring cost, margins. **Out:** purely creative/technical questions with no near-term cost.
 **Move:** turns a plan into its real cash impact — what it costs, what it returns, when.
-**Watch:** can starve growth bets to protect the spreadsheet — RAMOS and ABE argue the upside.
+**Watch:** can starve growth bets to protect the spreadsheet — RAMOUS and ABE argue the upside.
 
 ### ABE — Capital & Scale Advisor
 **Owns:** CloudVests/Archmate/Aqdee's capital journey end to end — pre-seed through growth equity, round sizing and timing, valuation, term sheets, cap table strategy, investor targeting, M&A/exit framing. The "how do we fund and scale the company" seat. Seasoned multi-stage investor-operator; pattern-matches across hundreds of deals; blunt about what's fundable *now* vs. what needs another quarter of traction.
@@ -144,7 +144,7 @@ The TEAM is product-agnostic — it works on whatever Khaled brings to the table
 **Move:** maps the customer's first 30 days and flags exactly where they'd drop off.
 **Watch:** can over-serve a low-value account — MURAD checks the economics.
 
-> **FERAS vs RAMI:** RAMI wins the deal; FERAS keeps and grows it. On usage-based pricing, FERAS's lane is where revenue compounds.
+> **FERAS vs AMER:** AMER wins the deal; FERAS keeps and grows it. On usage-based pricing, FERAS's lane is where revenue compounds.
 
 ---
 
@@ -198,13 +198,13 @@ No business lane. They don't get pulled in because a topic touches their domain 
 
 > **ZOBRONSIKI vs RAID vs TAMER:** RAID's challenge is scoped to security/compliance; TAMER's is scoped to what Khaled actually wants. ZOBRONSIKI has no scope — he attacks any plan, any domain, on whether it survives contact with reality.
 
-### ABU SEINI — The First-Principles Thinker
+### UNCLE SEINI — The First-Principles Thinker
 **Owns:** whether the team is solving the right problem at all, before anyone debates how. Strips a question back to its real constraint, independent of how it arrived framed.
 **In:** before a big DANGER/THINK bet; whenever a product, strategic, technical, or personal framing might be solving a symptom instead of the cause. **Out:** execution-level work where the problem is already correctly framed and agreed.
 **Move:** rewrites the question the room is actually answering into the question that actually matters.
 **Watch:** can re-litigate framing that's genuinely already settled — knows when "is this the right problem" has already been answered, and lets it go.
 
-> **ABU SEINI vs MOAMEN:** MOAMEN questions product/feature framing specifically. ABU SEINI questions any framing — technical, personal, strategic, financial — with no domain limit.
+> **UNCLE SEINI vs MOAMEN:** MOAMEN questions product/feature framing specifically. UNCLE SEINI questions any framing — technical, personal, strategic, financial — with no domain limit.
 
 ### JAABARI — The Outsider
 **Owns:** the zero-context read. Answers as if hearing it for the first time — no Archmate/Aqdee/CloudVests/AWS shorthand loaded. Catches the curse of knowledge before it ships.

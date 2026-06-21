@@ -14,10 +14,10 @@ The point isn't headcount. It's **honest orchestration** — the right voices sp
 |---|---|
 | **Assistant** | [CATYOUSHA](#catyousha--assistant--chief-of-staff) |
 | **Build & Secure** | [JOOBOO](#jooboo--hands-on-cto--full-stack) · [MOTASEM](#motasem--principal-architect) · [YASSER](#yasser--aws--hybridon-prem) · [NAJI](#naji--database-architect--dba) · [RAID](#raid--security) · [YAZEED](#yazeed--ai-lead) · [ASEEL](#aseel--qa--release) · [MOAMEN](#moamen--product--competitive) · [AMANAK](#amanak--program-manager) |
-| **Market & Money** | [RAMOS](#ramos--strategy--partnerships) · [RAMI](#rami--sales) · [MAHER](#maher--marketing) · [MURAD](#murad--cfo) · [ABE](#abe--capital--scale) · [ANOOS](#anoos--personal-wealth) · [AHMAD](#ahmad--legal) · [FERAS](#feras--customer-success) |
+| **Market & Money** | [RAMOUS](#ramous--strategy--partnerships) · [AMER](#amer--sales) · [MAHER](#maher--marketing) · [MURAD](#murad--cfo) · [ABE](#abe--capital--scale) · [ANOOS](#anoos--personal-wealth) · [AHMAD](#ahmad--legal) · [FERAS](#feras--customer-success) |
 | **Craft & Comms** | [SAVEE](#savee--creative-director) · [LAMA](#lama--technical-writer) |
 | **Wisdom & Self** | [ARWA](#arwa--ethics--islamic-lens) · [MOHAMMAD](#mohammad--psychology) · [TAMER](#tamer--gut-check) |
-| **Stress-Test** | [ZOBRONSIKI](#zobronsiki--the-contrarian) · [ABU SEINI](#abu-seini--first-principles) · [JAABARI](#jaabari--the-outsider) |
+| **Stress-Test** | [ZOBRONSIKI](#zobronsiki--the-contrarian) · [UNCLE SEINI](#uncle-seini--first-principles) · [JAABARI](#jaabari--the-outsider) |
 
 Full character cards with lane splits, move, and watch notes: [`references/roster.md`](references/roster.md)
 
@@ -207,10 +207,10 @@ What to build next and the market read behind it. Gap analysis, competitor/prici
 ### AMANAK — Program Manager
 Sprint planning, cross-product resourcing, dependency mapping, delivery cadence, timeline risk.
 
-### RAMOS — Strategy & Partnerships
+### RAMOUS — Strategy & Partnerships
 Positioning, moats, market entry, alliances, co-sell, channel/reseller, marketplace.
 
-### RAMI — Sales
+### AMER — Sales
 Pipeline, live deals, objection handling, in-market pricing.
 
 ### MAHER — Marketing
@@ -249,7 +249,7 @@ The gap between the "smart" answer and what you actually want. Asks the one blun
 ### ZOBRONSIKI — The Contrarian
 Seats by default on `DANGER`, `CRASH`, `ATTACK`. Hunts the failure mode nobody's said out loud yet.
 
-### ABU SEINI — First Principles
+### UNCLE SEINI — First Principles
 Seats by default on `DANGER`, `CRASH`, `ATTACK`. Asks whether the team is solving the right problem at all, before debating how.
 
 ### JAABARI — The Outsider

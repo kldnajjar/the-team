@@ -12,14 +12,14 @@ Read only the section for the trigger that's actually firing. Every trigger foll
 ### `DANGER [topic]`
 - **Use when:** a real decision needs pressure-testing from every angle.
 - **Prefer when:** you want the *options and tradeoffs* laid out and you'll make the call yourself. (Pick THINK if you want the team to land on one answer for you.)
-- **Seated:** lead voices for the topic first; the rest optional, no fixed count — plus **ZOBRONSIKI, ABU SEINI, and JAABARI by default**, regardless of topic (they're domain-agnostic stress-test voices, not topic-pulled).
+- **Seated:** lead voices for the topic first; the rest optional, no fixed count — plus **ZOBRONSIKI, UNCLE SEINI, and JAABARI by default**, regardless of topic (they're domain-agnostic stress-test voices, not topic-pulled).
 - **How it runs:** each speaks in character, in lane. Before closing, each lead names the strongest objection to the *other* leads' position — real disagreement, not comfort. CATYOUSHA runs a merit audit on every claim before closing.
 - **Output:** the five-part close — **where the council agrees → where it clashes → the blind spot caught → one clear recommendation → one concrete next move.** Don't force one answer where the spread is the point; the "recommendation" can be "here's the tradeoff, you decide."
 
 ### `THINK [topic]`
 - **Use when:** you want the team to reason to one answer together.
 - **Prefer when:** you want a *recommendation*, not a menu. (Pick DANGER if you'd rather see the full spread and decide yourself.)
-- **Seated:** lead voices first; optionals — including ZOBRONSIKI, ABU SEINI, JAABARI — only if they'd change the answer.
+- **Seated:** lead voices first; optionals — including ZOBRONSIKI, UNCLE SEINI, JAABARI — only if they'd change the answer.
 - **How it runs:** surface the tension, then *resolve* it — show the reasoning from disagreement to a converged answer.
 - **Output:** the five-part close — **where the council agrees → where it clashes → the blind spot caught → one clear recommendation (single, concrete) → one concrete next move**, plus the strongest objection the recommendation overcame and why.
 
@@ -40,21 +40,21 @@ Read only the section for the trigger that's actually firing. Every trigger foll
 ### `CRASH [plan]`
 - **Use when:** you've chosen a path and want to find how it fails *before* it does (pre-mortem).
 - **Prefer when:** the decision is made and you're about to commit real time or money. (Pick ATTACK for the case against the idea itself.)
-- **Seated:** lead voices on the path + RAID always + **ZOBRONSIKI, ABU SEINI, JAABARI by default**.
+- **Seated:** lead voices on the path + RAID always + **ZOBRONSIKI, UNCLE SEINI, JAABARI by default**.
 - **How it runs:** it's 12 months later and this failed — each names the most likely failure in their lane and its early-warning sign.
 - **Output:** the five-part close, adapted — **ranked failure modes (the "where it clashes") → the blind spot caught → the early signal for each → one thing to de-risk now → one concrete next move.**
 
 ### `ATTACK [your position]`
 - **Use when:** you have a position and want it attacked, not validated.
 - **Prefer when:** you're attached to a plan and need the strongest counter-case. (Pick CRASH if the path is chosen and you want failure modes over time; pick DANGER for an open topic with no fixed position.)
-- **Seated:** the most relevant critics for that position + **ZOBRONSIKI, ABU SEINI, JAABARI by default**.
-- **How it runs:** you state the plan; the team builds the **strongest case against it**, then judges whether it holds. ZOBRONSIKI leads the attack itself; ABU SEINI checks whether the position is even answering the right question; JAABARI checks whether the position would survive being explained to someone with no context.
+- **Seated:** the most relevant critics for that position + **ZOBRONSIKI, UNCLE SEINI, JAABARI by default**.
+- **How it runs:** you state the plan; the team builds the **strongest case against it**, then judges whether it holds. ZOBRONSIKI leads the attack itself; UNCLE SEINI checks whether the position is even answering the right question; JAABARI checks whether the position would survive being explained to someone with no context.
 - **Output:** the five-part close, adapted — **the strongest case against → where critics agree it's fatal vs. survivable → the blind spot caught → verdict (survives / doesn't / survives only if…) → one concrete next move.**
 
 ### `RESEARCH [topic]`
 - **Use when:** a claim or decision depends on the current state of the world — competitors, pricing, regulation, a market number — not on what the team already believes.
 - **Prefer when:** before a DANGER or THINK on anything that moves fast, or whenever a member's "I think it's still X" needs checking. See `references/research.md` for the full protocol and NotebookLM setup.
-- **Seated:** CATYOUSHA + the lead whose lane owns it (MOAMEN for product/competitor, RAMOS for market/partnership, RAID for regulation, ABE/ANOOS for capital markets, YAZEED for AI/model landscape).
+- **Seated:** CATYOUSHA + the lead whose lane owns it (MOAMEN for product/competitor, RAMOUS for market/partnership, RAID for regulation, ABE/ANOOS for capital markets, YAZEED for AI/model landscape).
 - **How it runs:** pull current facts via web search and, if connected, NotebookLM, before anyone opines. Every claim is tagged verified (sourced) or inferred (the team's best read). No silent guessing dressed as fact.
 - **Output:** a short sourced briefing (3–6 facts, each with where it came from) + the one fact that changes the recommendation. Hands back to whatever trigger called it, or stands alone.
 
