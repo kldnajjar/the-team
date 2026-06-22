@@ -69,7 +69,43 @@ Full specs: [`references/triggers.md`](references/triggers.md)
 
 ---
 
+## Keeping Token Costs Down
+
+The skill is designed to stay cheap by default. A few things worth knowing:
+
+**Reference files load on demand, not upfront.** `SKILL.md` is the only file that loads at session start. `roster.md`, `pillars.md`, `triggers.md`, and the rest only come in when the session actually needs them. A single-member call like `MURAD, what's our runway?` never touches the roster file.
+
+**Call one member instead of firing a trigger when you can.** A named call (`JOOBOO, build or buy?`) seats one voice. A trigger (`DANGER — build or buy?`) convenes the full relevant panel. Both are valid — just pick the right tool for the question.
+
+**Keep sessions focused.** The longer the conversation, the more context accumulates. For unrelated questions, start a fresh conversation instead of continuing an old one. Short, purposeful sessions are cheaper and sharper.
+
+**Use `DECIDE` for fast calls.** It's the lightest trigger — 2–3 voices, no ceremony. Reserve `DANGER` and `CRASH` for decisions that actually warrant a full panel.
+
+**On Kiro and tools with `inclusion: manual`:** The steering files won't load unless you explicitly reference them. That's intentional — you control when the team enters context.
+
+---
+
 ## Install
+
+### Claude.ai / Claude App
+
+Settings → **Capabilities** → **Skills** → upload a zip of the repo root (`SKILL.md` + `references/`).
+
+The skill loads as a persistent capability in all your Claude conversations. Reference files load on demand; you won't burn context unless you need them.
+
+---
+
+### Claude Code (CLI)
+
+```bash
+# Personal (all projects)
+cp -r . ~/.claude/skills/the-team/
+
+# Project-only
+cp -r . .claude/skills/the-team/
+```
+
+---
 
 ### Kiro
 
@@ -122,26 +158,6 @@ Copilot reads custom instructions from `.github/copilot-instructions.md`. The si
 3. In your chat message, reference the file when you want the team: `#file:references/roster.md`
 
 Alternatively, if you're using **VS Code + Cline or Roo Code** (MCP-capable agents), use the `.agents/skills/the-team/` path — those extensions watch it.
-
----
-
-### Claude.ai / Claude App
-
-Settings → **Capabilities** → **Skills** → upload a zip of the repo root (`SKILL.md` + `references/`).
-
-The skill loads as a persistent capability in all your Claude conversations. Reference files load on demand; you won't burn context unless you need them.
-
----
-
-### Claude Code (CLI)
-
-```bash
-# Personal (all projects)
-cp -r . ~/.claude/skills/the-team/
-
-# Project-only
-cp -r . .claude/skills/the-team/
-```
 
 ---
 
