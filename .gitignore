@@ -1,19 +1,6 @@
-# ── the-team skill — .gitignore ───────────────────────────────────────────────
-
-# IMPORTANT: the Kiro steering files under kiro/.kiro/steering/ are part of this
-# repo's deliverable. Do NOT ignore them. Many "Kiro" gitignore templates treat
-# .kiro/ as local IDE config and ignore it — that would drop the whole Kiro
-# variant here. The rule below force-keeps it.
-!kiro/.kiro/
-!kiro/.kiro/steering/
-!kiro/.kiro/steering/*.md
-
-# ── Secrets — never commit ────────────────────────────────────────────────────
-# The research workflow (NotebookLM MCP, optional headroom, any API use) involves
-# Google auth and tokens. None of that belongs in version control.
+# Secrets (NotebookLM MCP / API tokens): never commit
 .env
 .env.*
-*.local
 *.pem
 *.key
 credentials.json
@@ -21,41 +8,22 @@ token.json
 client_secret*.json
 **/secrets/
 
-# ── Build artifacts ───────────────────────────────────────────────────────────
-# The distributable zips are generated, not source. Regenerate from the tracked
-# files instead of committing them.
+# Decision journal: personal decisions stay local
+.the-team/
+
+# Build artifacts (zip is generated with `git archive`)
 *.zip
 dist/
-build/
 
-# ── Node (only if you run the design.md linter or notebooklm-mcp locally) ─────
+# Local tooling
 node_modules/
-npm-debug.log*
-yarn-error.log*
-.pnpm-debug.log*
-
-# ── Python (only if you run headroom or a Python MCP locally) ─────────────────
 __pycache__/
-*.py[cod]
 .venv/
-venv/
-.mypy_cache/
-.pytest_cache/
 
-# ── Editor / IDE local config (NOT the kiro/ deliverable above) ───────────────
+# Editor / OS
 .vscode/
 .idea/
 *.swp
-*.swo
-*~
-
-# ── OS junk ───────────────────────────────────────────────────────────────────
 .DS_Store
-.DS_Store?
 Thumbs.db
-desktop.ini
-
-# ── Logs / temp ───────────────────────────────────────────────────────────────
 *.log
-*.tmp
-.cache/
