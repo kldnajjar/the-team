@@ -1,5 +1,11 @@
 # Changelog
 
+## 2.4.0 — 2026-11-09
+
+### Added
+- **SAVEE UI/UX stack** (`skills-map.md` → Craft): `ui-ux-pro-max` (design system), Claude Design / Design System artifact types, `frontend-design`, Vercel `web-design-guidelines`, `design:design-critique`, `design:accessibility-review` (WCAG 2.1 AA), `design:ux-copy`, `design:design-handoff`, `dataviz`.
+- SAVEE's default pre-ship review loop (critique → guidelines → accessibility → copy, top 3 issues) and an Arabic/RTL check.
+
 ## 2.3.0 — 2026-11-09
 
 ### Added

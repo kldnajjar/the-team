@@ -7,7 +7,7 @@
 [![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
 [![Agent Skill](https://img.shields.io/badge/format-Agent%20Skill-blue)](https://github.com/anthropics/skills)
 [![Works with](https://img.shields.io/badge/works%20with-Claude%20%C2%B7%20Claude%20Code%20%C2%B7%20Cursor%20%C2%B7%20Kiro-purple)](#-install)
-[![Version](https://img.shields.io/badge/version-2.3.0-orange)](CHANGELOG.md)
+[![Version](https://img.shields.io/badge/version-2.4.0-orange)](CHANGELOG.md)
 
 [Quick start](#-quick-start) · [Meet the team](#-meet-the-team) · [Triggers](#-triggers) · [How it works](#-how-it-works) · [Install](#-install) · [FAQ](#-faq)
 
@@ -182,7 +182,8 @@ When a skill is installed, the owning member uses it, then speaks the result in 
 - **RAMOUS** → `sales:account-research`, `sales:competitive-intelligence`, `sales:account-plan`
 - **ABE** → `sales:forecast`, `sales:deal-slip-scenario`, `sales:win-loss-review`
 - **AMANAK** → [AI Hero](https://www.aihero.dev/skills-catalog) skills (`/grill-with-docs`, `/to-spec`, `/to-tickets`, `/implement-spec`, `/handoff`, `/retro`), plus Google [Harness²](https://github.com/google-research/harness2) to tune the TEAM itself in `META`
-- **MOTASEM / JOOBOO / YAZEED / SAVEE** → engineering, AWS, Bedrock and design skills
+- **SAVEE** → a full UI/UX stack: [`ui-ux-pro-max`](https://github.com/nextlevelbuilder/ui-ux-pro-max-skill) (design system), `frontend-design` (build), Vercel's [`web-design-guidelines`](https://github.com/vercel-labs/agent-skills) and `design:accessibility-review` (review), `design:ux-copy`, `design:design-handoff`
+- **MOTASEM / JOOBOO / YAZEED** → engineering, AWS and Bedrock skills
 
 No skill installed? The member answers unaided and says so. Edit the full map in [`references/skills-map.md`](references/skills-map.md).
 
@@ -201,7 +202,7 @@ No skill installed? The member answers unaided and says so. Edit the full map in
 | **Cursor, Windsurf, Cline, Gemini CLI, OpenCode** | Copy `SKILL.md` + `references/` to `.agents/skills/the-team/` (or the tool's rules folder) |
 | **Kiro** | Copy `SKILL.md` + `references/*.md` into `.kiro/steering/` with `inclusion: manual` front-matter; load with `#the-team` |
 
-**Optional extras:** the Claude **sales** plugin (for Market & Money), AI Hero skills via `npx skills add mattpocock/skills -y -g` (for AMANAK), a MiroFish instance (for `SIMULATE`), and a NotebookLM MCP (for `RESEARCH`, see [`references/research.md`](references/research.md)).
+**Optional extras:** the Claude **sales** plugin (for Market & Money), AI Hero skills via `npx skills add mattpocock/skills -y -g` (for AMANAK), `ui-ux-pro-max` and `web-design-guidelines` (for SAVEE), a MiroFish instance (for `SIMULATE`), and a NotebookLM MCP (for `RESEARCH`, see [`references/research.md`](references/research.md)).
 
 ---
 
@@ -247,7 +248,7 @@ Issues and PRs welcome, especially new worked examples, skill mappings, and eval
 
 ## 🙏 Credits
 
-Council method inspired by [karpathy/llm-council](https://github.com/karpathy/llm-council) and the community council skills ([aiwithremy](https://github.com/aiwithremy/claude-skills-llm-council), [evisoft](https://github.com/evisoft/council), [torpedod](https://github.com/torpedod/claude-council)). Delivery workflow skills by [AI Hero / Matt Pocock](https://github.com/mattpocock/skills). Harness self-improvement by Google Research [Harness²](https://github.com/google-research/harness2) (Apache-2.0). Crowd simulation by [MiroFish](https://github.com/666ghj/MiroFish) (AGPL-3.0, used as an external service, not bundled).
+Council method inspired by [karpathy/llm-council](https://github.com/karpathy/llm-council) and the community council skills ([aiwithremy](https://github.com/aiwithremy/claude-skills-llm-council), [evisoft](https://github.com/evisoft/council), [torpedod](https://github.com/torpedod/claude-council)). UI/UX skills by [nextlevelbuilder](https://github.com/nextlevelbuilder/ui-ux-pro-max-skill) and [Vercel](https://github.com/vercel-labs/agent-skills). Delivery workflow skills by [AI Hero / Matt Pocock](https://github.com/mattpocock/skills). Harness self-improvement by Google Research [Harness²](https://github.com/google-research/harness2) (Apache-2.0). Crowd simulation by [MiroFish](https://github.com/666ghj/MiroFish) (AGPL-3.0, used as an external service, not bundled).
 
 ## 📄 License
 

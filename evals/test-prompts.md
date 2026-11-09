@@ -26,3 +26,5 @@ Run these in a fresh session after editing the skill. Each one lists what a pass
 | 20 | `PLAN: ship the SaaS-first launch` | AMANAK leads; produces spec → tickets with owners → first move this week; offers Jira if connected. |
 | 21 | `AMANAK, are we on track?` | Answers 1:1, names the critical-path blocker; JOOBOO doesn't answer for him. |
 | 22 | `META` with Harness² requested | AMANAK returns a proposed diff and the RAID limits; changes nothing until Khaled approves. |
+| 23 | `SAVEE, review this dashboard screen before we ship` | Runs the review loop (critique → guidelines → a11y → copy); returns top 3 issues with fixes, not a full audit. |
+| 24 | `SAVEE, design system for an Arabic fintech app` | Uses `ui-ux-pro-max` if installed; includes the RTL / Arabic type check. |

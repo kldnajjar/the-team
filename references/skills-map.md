@@ -93,6 +93,36 @@ harness2-demo --output runs/demo --k 2      # no-credentials demo
 - Execution substrates have **unrestricted network by default** and Codex runs with its sandbox off. Restrict egress, and never point it at client data.
 - It's a research project, "not an officially supported Google product", and its benchmark gains are author-reported. Start with a handful of tasks; you pay all inference.
 
+## Craft
+
+### SAVEE: Writing & Design → UI/UX stack
+
+SAVEE works the stack in order, **research → system → design → review → copy → handoff**, and only invokes the step the question needs.
+
+| Phase | Question | Skill | Source |
+|---|---|---|---|
+| Research | Who are the users and what's broken for them? | `design:user-research`, `design:research-synthesis` | Claude design plugin |
+| System | Pick the style, palette, type pairing and UX rules for this product | **`ui-ux-pro-max`**: 99 UX guidelines, palettes, font pairings, per-stack rules (React, Next.js, shadcn, Flutter, SwiftUI…) | [nextlevelbuilder/ui-ux-pro-max-skill](https://github.com/nextlevelbuilder/ui-ux-pro-max-skill) |
+| System | Record or extend the design system (tokens, components) | `design:design-system`; the **Design System** artifact type in the Claude app | Claude |
+| Design | Mockups, screens, landing pages, posters | the **Design** artifact type (Claude Design) in the app; Visualizer for quick inline sketches | Claude |
+| Build | Production-grade UI code that doesn't look like generic AI output | `frontend-design` | [anthropics/skills](https://github.com/anthropics/skills) |
+| Review | "Review my UI": web interface guidelines compliance | **`web-design-guidelines`** | [vercel-labs/agent-skills](https://github.com/vercel-labs/agent-skills) |
+| Review | Usability, hierarchy and consistency critique | `design:design-critique` | Claude design plugin |
+| Review | WCAG 2.1 AA: contrast, keyboard, touch targets, screen readers | `design:accessibility-review` | Claude design plugin |
+| Copy | Microcopy, errors, empty states, CTAs | `design:ux-copy`, then `humanizer` for docs and long copy | Claude design plugin / your skills |
+| Handoff | Dev spec: tokens, props, states, breakpoints, edge cases | `design:design-handoff` | Claude design plugin |
+| Data | Charts, dashboards, KPI tiles | `dataviz` (and the **Dashboard** artifact type in the app) | Claude |
+
+Install the two community skills:
+```bash
+npx skills add nextlevelbuilder/ui-ux-pro-max-skill@ui-ux-pro-max
+npx skills add vercel-labs/agent-skills@web-design-guidelines
+```
+
+**SAVEE's default review loop** for any UI before it ships: `design-critique` → `web-design-guidelines` → `accessibility-review` → `ux-copy`. Report the top 3 issues only, each with its fix.
+
+**MENA check:** for Arabic-facing products, SAVEE also checks RTL mirroring (layout, icons, charts), Arabic type pairing and line height, and mixed Arabic/English numerals, since none of the skills above cover these well.
+
 ## Other members
 
 | Member | Companion skills |
@@ -102,7 +132,6 @@ harness2-demo --output runs/demo --k 2      # no-credentials demo
 | **MOTASEM** | `engineering:architecture`, `engineering:system-design`, `aws-sow-generator`, `aws-rapid-assessment` |
 | **RAID** | `engineering:incident-response`, `engineering:code-review` (security focus) |
 | **YAZEED** | `bedrock-model-selector`, `aiaf-assessment-report`, `aws-data-ai-readiness-assessment` |
-| **SAVEE** | `humanizer`, `design:design-critique`, `design:ux-copy`, `frontend-design` |
 | **RESEARCH** trigger | `deep-research`, `fact-checker` |
 | **SIMULATE** trigger | MiroFish (external engine, see `simulation.md`) |
 

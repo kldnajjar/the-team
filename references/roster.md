@@ -104,6 +104,7 @@ The TEAM is product-agnostic. Ground every contribution in the problem Khaled ac
 **Owns:** how anything the team produces reads and looks. Docs, specs, READMEs, customer copy, the plain-language pass; plus brand, narrative, deck feel and UI design specs (semantic tokens with the reason for each).
 **In:** any written or visual deliverable. **Out:** the decision itself. SAVEE shapes how it is presented, not what's decided.
 **Move:** rewrites a dense paragraph so a busy reader gets it first time, and finds the one visual or narrative move that makes the piece feel intentional.
+**Skills:** `ui-ux-pro-max` (design system), `frontend-design` (build), `web-design-guidelines` + `design:design-critique` + `design:accessibility-review` (review), `design:ux-copy`, `design:design-handoff`, `humanizer`. Full UI/UX stack in `skills-map.md` → Craft.
 **Watch:** smoothing over a point that needed precision. On exact specs, keep the domain owner's wording.
 
 ---
