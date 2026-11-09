@@ -1,282 +1,254 @@
-# the TEAM
+<div align="center">
 
-A personal AI advisory council — 25 named advisor personas plus **CATYOUSHA**, the chief of staff who runs the room.
+# 🧠 the TEAM
 
-Built in the [Agent Skills](https://github.com/anthropics/skills) format (`SKILL.md` + on-demand reference files), with a dedicated Kiro variant. Product-agnostic: works on whatever product, project, company, or personal decision is in front of you.
+**Your own AI advisory council: 17 voices who argue, so you don't decide alone.**
 
-The point isn't headcount. It's **honest orchestration** — the right voices speak, real disagreement surfaces, and every session ends in a clear call or concrete action. Not a wall of agreeable voices nodding along.
+[![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
+[![Agent Skill](https://img.shields.io/badge/format-Agent%20Skill-blue)](https://github.com/anthropics/skills)
+[![Works with](https://img.shields.io/badge/works%20with-Claude%20%C2%B7%20Claude%20Code%20%C2%B7%20Cursor%20%C2%B7%20Kiro-purple)](#-install)
+[![Version](https://img.shields.io/badge/version-2.3.0-orange)](CHANGELOG.md)
 
----
+[Quick start](#-quick-start) · [Meet the team](#-meet-the-team) · [Triggers](#-triggers) · [How it works](#-how-it-works) · [Install](#-install) · [FAQ](#-faq)
 
-## The Roster
-
-| Group | Members |
-|---|---|
-| **Assistant** | [CATYOUSHA](#catyousha--assistant--chief-of-staff) |
-| **Build & Secure** | [JOOBOO](#jooboo--hands-on-cto--full-stack) · [MOTASEM](#motasem--principal-architect) · [YASSER](#yasser--aws--hybridon-prem) · [NAJI](#naji--database-architect--dba) · [RAID](#raid--security) · [YAZEED](#yazeed--ai-lead) · [ASEEL](#aseel--qa--release) · [MOAMEN](#moamen--product--competitive) · [AMANAK](#amanak--program-manager) |
-| **Market & Money** | [RAMOUS](#ramous--strategy--partnerships) · [AMER](#amer--sales) · [MAHER](#maher--marketing) · [MURAD](#murad--cfo) · [ABE](#abe--capital--scale) · [ANOOS](#anoos--personal-wealth) · [AHMAD](#ahmad--legal) · [FERAS](#feras--customer-success) |
-| **Craft & Comms** | [SAVEE](#savee--creative-director) · [LAMA](#lama--technical-writer) |
-| **Wisdom & Self** | [ARWA](#arwa--ethics--islamic-lens) · [MOHAMMAD](#mohammad--psychology) · [TAMER](#tamer--gut-check) |
-| **Stress-Test** | [ZOBRONSIKI](#zobronsiki--the-contrarian) · [UNCLE SEINI](#uncle-seini--first-principles) · [JAABARI](#jaabari--the-outsider) |
-
-Full character cards with lane splits, move, and watch notes: [`references/roster.md`](references/roster.md)
+</div>
 
 ---
 
-## How to Use It
+## Why
 
-**The most common path — call someone by name:**
+Ask one AI a question and you get one confident answer. Often it's the answer you were hoping for.
 
-```
-YASSER, cheapest way to run this Postgres?
-MURAD, what's the burn impact of hiring two senior engineers?
-YAZEED, should we use GPT-4o or Claude for this RAG use case?
-```
+**the TEAM** turns that single answer into a meeting. An architect, a CFO, a lawyer, a security lead and others each give their view **from their own lane**. Three stress-testers attack the plan, one upside voice asks if you're aiming too small, and a chief of staff closes with **one recommendation and one next step**.
 
-One member answers directly, in character, in their lane. No roundtable, no ceremony. If it's outside their lane, they hand off instead of bluffing.
-
-**For structured sessions — fire a trigger:**
-
-```
-DANGER — should we build this feature in-house or buy it?
-THINK — what's the right database for this workload?
-CRASH — we're launching in two weeks, what kills us?
-```
-
-CATYOUSHA convenes the right voices, runs real disagreement, and closes with a verdict.
-
-Worked examples of both: [`references/examples.md`](references/examples.md)
+- 🎯 **Only the right people speak:** 2–3 leads per topic, not 17 voices nodding along.
+- ⚔️ **Real disagreement:** on Claude Code each voice thinks independently, then answers are peer-reviewed **anonymously**, following Karpathy's [LLM Council](https://github.com/karpathy/llm-council) pattern.
+- 🧰 **Uses real tools:** advisors call installed skills (e.g. the Claude **sales** skills for pipeline, deals and forecasts) instead of guessing.
+- 🐟 **Simulates the market:** `SIMULATE` runs a [MiroFish](https://github.com/666ghj/MiroFish) crowd simulation when the question is "how will people react?"
+- 📊 **Polished HTML report:** every big session can produce a shareable report with the verdict, every voice, the blind review and the evidence.
+- 📓 **Learns from outcomes:** a decision journal records who called it right.
+- 💸 **Cheap by default:** only `SKILL.md` loads at start; everything else loads on demand.
 
 ---
 
-## Triggers
+## ⚡ Quick start
 
-| Trigger | Use it for |
-|---|---|
-| `RULE` | Remind yourself how the team works |
-| `DANGER [topic]` | Options + tradeoffs laid out — you make the call |
-| `THINK [topic]` | Team converges to one recommendation |
-| `DECIDE [question]` | Fast either/or call, 2–3 voices |
-| `PLAN [decision]` | Turn a made decision into owned steps |
-| `CRASH [plan]` | Pre-mortem a chosen path |
-| `ATTACK [position]` | Devil's-advocate a position you hold |
-| `RESEARCH [topic]` | Ground a topic in sourced facts before opinions |
-| `RANK` | Daily pulse — what matters today |
-| `MEETING` | Credit a past call that proved right |
-| `RECOMMENDATION` | Flag a capability gap, propose a new member |
-
-Full specs: [`references/triggers.md`](references/triggers.md)
-
----
-
-## Keeping Token Costs Down
-
-The skill is designed to stay cheap by default. A few things worth knowing:
-
-**Reference files load on demand, not upfront.** `SKILL.md` is the only file that loads at session start. `roster.md`, `pillars.md`, `triggers.md`, and the rest only come in when the session actually needs them. A single-member call like `MURAD, what's our runway?` never touches the roster file.
-
-**Call one member instead of firing a trigger when you can.** A named call (`JOOBOO, build or buy?`) seats one voice. A trigger (`DANGER — build or buy?`) convenes the full relevant panel. Both are valid — just pick the right tool for the question.
-
-**Keep sessions focused.** The longer the conversation, the more context accumulates. For unrelated questions, start a fresh conversation instead of continuing an old one. Short, purposeful sessions are cheaper and sharper.
-
-**Use `DECIDE` for fast calls.** It's the lightest trigger — 2–3 voices, no ceremony. Reserve `DANGER` and `CRASH` for decisions that actually warrant a full panel.
-
-**On Kiro and tools with `inclusion: manual`:** The steering files won't load unless you explicitly reference them. That's intentional — you control when the team enters context.
-
----
-
-## Install
-
-### Claude.ai / Claude App
-
-Settings → **Capabilities** → **Skills** → upload a zip of the repo root (`SKILL.md` + `references/`).
-
-The skill loads as a persistent capability in all your Claude conversations. Reference files load on demand; you won't burn context unless you need them.
-
----
-
-### Claude Code (CLI)
-
+**1. Install** (Claude Code):
 ```bash
-# Personal (all projects)
-cp -r . ~/.claude/skills/the-team/
-
-# Project-only
-cp -r . .claude/skills/the-team/
+git clone https://github.com/kldnajjar/the-team ~/.claude/skills/the-team
 ```
+
+**2. Ask one advisor by name** (the most common use):
+```text
+MOTASEM, cheapest way to run a 200 GB Postgres in eu-central-1?
+AMER, prep me for tomorrow's call with the bank.
+ABE, what does losing this deal do to our quarter?
+```
+
+**3. Or convene the room for a big decision:**
+```text
+DANGER: launch SaaS first or self-hosted first?
+```
+
+What you get back (shortened):
+```text
+CATYOUSHA: close
+  Agree:          one shared image for both deployment models
+  Clash:          RAMOUS says self-hosted is the entry ticket; JOOBOO says SaaS protects the team
+  Blind spot:     nobody named the first paying customer (UNCLE SEINI)
+  Recommendation: SaaS first, Helm one release behind; flip if a regulated buyer commits
+  Next move:      list the 3 likeliest first customers and their deployment constraint
+```
+
+Full worked sessions: [`references/examples.md`](references/examples.md)
 
 ---
 
-### Kiro
+## 👥 Meet the team
 
-Kiro uses **steering files**, not `SKILL.md`. The skill ships a ready-made Kiro variant.
+Each member has one job. If you ask them something outside it, they hand you to the right person instead of bluffing.
 
-**User-level (works across all your projects):**
+### 🗂️ The chair
 
-```
-~/.kiro/skills/the-team/
-```
+| | Member | What they do | Ask them when… | Try |
+|---|---|---|---|---|
+| 🗂️ | **CATYOUSHA** | Chief of staff. Runs every session, keeps score, writes the close. | You want the room organised or a daily pulse. | `RANK` |
 
-Copy `SKILL.md` and the `references/` folder into that path. Kiro will pick it up automatically.
+### 🛠️ Build
 
-**Workspace-only:**
+| | Member | What they do | Ask them when… | Try |
+|---|---|---|---|---|
+| 🧑‍💻 | **JOOBOO** | CTO. How to build it, with how many people, and is it safe to ship. | Build vs buy, team size, release calls. | `JOOBOO, rewrite or refactor?` |
+| 📅 | **AMANAK** | Program manager. Turns a decision into a spec, tickets and a plan, and runs coding agents to deliver it. | Planning, sprints, "are we on track?", breaking work down for agents. | `PLAN: the SaaS-first launch` |
+| 🏗️ | **MOTASEM** | Architect. Cloud, on-prem/hybrid and databases at the lowest cost that still meets the SLA. | Which AWS service, which database, which region, DR. | `MOTASEM, DynamoDB or Aurora?` |
+| 🛡️ | **RAID** | Security, vulnerabilities & regulation. Finds the hole and names the rule it breaks. | CVEs, dependencies, NCA / SAMA / PDPL / GDPR / EU AI Act. | `RAID, is this bucket policy safe?` |
+| 🤖 | **YAZEED** | AI engineer. Picks the model, builds the agent, knows the cost per call. | Models, RAG, agents, evals, AI cost. | `YAZEED, Sonnet or Haiku here?` |
 
-```
-<your-project>/.kiro/steering/
-```
+### 💼 Market & Money (powered by the Claude **sales** skills)
 
-Copy the contents of `kiro/.kiro/steering/` into your project's steering folder.
+| | Member | What they do | Ask them when… | Try |
+|---|---|---|---|---|
+| ♟️ | **RAMOUS** | Product & strategy. What to build, where to play, which partner opens the door. | Roadmap, competitors, positioning, partnerships. | `RAMOUS, research this prospect` |
+| 🤝 | **AMER** | Go-to-market. Sells it, markets it, keeps the customer. | Call prep, objections, deals, pipeline, churn. | `AMER, they said we're too expensive` |
+| 💰 | **ABE** | CFO. Runway, margins, pricing, forecasts and fundraising. | Cost of a decision, forecast, raising money. | `ABE, what if this deal slips?` |
+| ⚖️ | **AHMAD** | Lawyer. Finds the clause that bites later. | Contracts, entity structure, IP, data terms. | `AHMAD, review this MSA clause` |
 
-The files use `inclusion: manual` — they don't load by default and won't burn context. Pull the skill in by using a trigger word or member name in chat, or by referencing `#the-team` directly.
+### ✍️ Craft · 🧭 Values & self
 
-> **Note:** Use the Kiro-specific steering variant, not the raw `SKILL.md`. They cover the same ground but are formatted for each tool's loader.
+| | Member | What they do | Ask them when… | Try |
+|---|---|---|---|---|
+| 🎨 | **SAVEE** | Writing & design. Makes it clear and makes it look intentional. | Docs, decks, copy, brand, UI specs. | `SAVEE, make this README human` |
+| 🌙 | **ARWA** | Ethics & Islamic lens. Is it right, and is it halal? | Revenue models, investments, values calls. | `ARWA, is this pricing model OK?` |
+| 🫂 | **MOHAMMAD** | Gut-check & wellbeing. Asks what you actually want, and notices the pressure. | The "smart" answer doesn't feel right. | `MOHAMMAD, am I burning out on this?` |
 
----
+### 🔥 The stress-testers
 
-### Cursor
+They have **no expert lane on purpose**. Three of them attack the plan, and one pushes it to be bigger, so the close is neither reckless nor timid. ZOBRONSIKI, UNCLE SEINI and JAABARI join every `DANGER`, `CRASH` and `ATTACK`; IDREES joins every `DANGER` and `DEEP` run.
 
-```
-.cursor/rules/the-team.mdc
-```
+| | Member | Their one question | What it catches |
+|---|---|---|---|
+| 😈 | **ZOBRONSIKI** | "How does this fail?" | The risk everyone agreed not to mention |
+| 🔍 | **UNCLE SEINI** | "Are we solving the right problem?" | A great answer to the wrong question |
+| 👀 | **JAABARI** | "Would a stranger understand this?" | Jargon and insider assumptions, before a customer sees them |
+| 🚀 | **IDREES** | "What if we're thinking too small?" | The bigger win: an "and" where you assumed "or" |
 
-Or use the cross-client convention:
-
-```
-.agents/skills/the-team/
-```
-
-Copy `SKILL.md` + `references/` into that folder. Cursor picks up `.cursor/rules/` natively; `.agents/skills/` is the cross-client fallback most tools watch.
-
----
-
-### VS Code (GitHub Copilot / Copilot Chat)
-
-Copilot reads custom instructions from `.github/copilot-instructions.md`. The simplest approach:
-
-1. Copy the contents of `SKILL.md` into `.github/copilot-instructions.md` in your repo.
-2. Create a `references/` folder at the same level and copy the reference files in.
-3. In your chat message, reference the file when you want the team: `#file:references/roster.md`
-
-Alternatively, if you're using **VS Code + Cline or Roo Code** (MCP-capable agents), use the `.agents/skills/the-team/` path — those extensions watch it.
+Full character cards: [`references/roster.md`](references/roster.md) · Per-member prompts: [`references/pillars.md`](references/pillars.md) · Skills each member uses: [`references/skills-map.md`](references/skills-map.md)
 
 ---
 
-### Windsurf / Aider / OpenCode / Gemini CLI / Others
+## 🎛️ Triggers
 
-```
-.agents/skills/the-team/
-```
+| Trigger | What it does | Example |
+|---|---|---|
+| `DANGER` | Lays out options and tradeoffs; you decide | `DANGER: raise now or in two quarters?` |
+| `THINK` | The team agrees on one answer | `THINK: which region for the EU launch?` |
+| `DECIDE` | Fast either/or in a few lines | `DECIDE: Slack or Teams for the client?` |
+| `PLAN` | Turns a decision into owned steps | `PLAN: the SaaS-first launch` |
+| `CRASH` | Pre-mortem: "it's a year later and this failed. Why?" | `CRASH: launch in 3 weeks` |
+| `ATTACK` | The strongest case against your position | `ATTACK: I think we should drop Azure` |
+| `RESEARCH` | Current, sourced facts before opinions | `RESEARCH: competitor pricing in KSA` |
+| `SIMULATE` | Crowd simulation of how people would react (MiroFish) | `SIMULATE: banks react to per-investigation pricing` |
+| `RANK` | Daily pulse: top 3 things for today | `RANK` |
+| `MEETING` | Credit a past call that proved right | `MEETING` |
+| `META` | Tune the team using journal outcomes | `META` |
+| `RECOMMENDATION` | Is a lane missing from the team? | `RECOMMENDATION` |
+| `RULE` | Print the cheat sheet | `RULE` |
 
-Most agent tools scan `.agents/skills/` as the cross-client convention. Copy `SKILL.md` + `references/` there and it'll be picked up on next load.
+Add `DEEP` to any big trigger (`DANGER DEEP: …`) for the full run: forced debate, options ranking and an optional simulation. Full specs: [`references/triggers.md`](references/triggers.md)
 
 ---
 
-## Repo Structure
+## ⚙️ How it works
 
+```text
+ Your question
+     │
+     ▼
+ 0. FRAME       CATYOUSHA: checks past decisions, flags biased wording, writes a 300-word brief
+     │
+     ▼
+ 1. INDEPENDENT 2–3 leads + stress-testers answer alone, in parallel, each with a confidence block
+     │          (JAABARI only sees what a customer would see)
+     ▼
+ 2. BLIND REVIEW answers shuffled to A/B/C; leads rank them without knowing who wrote what
+     │
+     ▼
+ 3. DEBATE      if everyone agrees too easily → ZOBRONSIKI attacks, top lead defends
+     │
+     ▼
+ 4. CLOSE       agree → clash → blind spot → ONE recommendation → ONE next move (+ dissent ledger)
+     │
+     ▼
+ 5. REPORT      polished HTML report + decision appended to .the-team/journal.jsonl
 ```
-the-team-skill/
-├── README.md                ← this file
-├── SKILL.md                 ← the skill index (always loaded by the agent)
+
+| Mode | Used by | Cost |
+|---|---|---|
+| Quick | `DECIDE`, `THINK`, name-calls | 1–4 model calls |
+| Standard | `DANGER`, `CRASH`, `ATTACK` | ~10–14 calls |
+| Deep | `… DEEP` | 16+ calls |
+
+On hosts without subagents (e.g. claude.ai chat), one model plays each voice in turn and the same steps still apply. Details: [`references/parallel-mode.md`](references/parallel-mode.md)
+
+### 📊 The report
+
+Standard and Deep runs fill [`assets/report-template.html`](assets/report-template.html): one self-contained file with no external assets, light and dark mode, and print-ready. It shows confidence and consensus, the verdict and next move, agree / clash / blind spots, the upside check, every voice with its confidence, the blind peer-review table, the debate, ranked options, evidence tagged *verified / inferred / simulated*, the dissent ledger, and a copyable journal entry. Open the template in a browser to see a sample.
+
+### 🧰 Companion skills
+
+When a skill is installed, the owning member uses it, then speaks the result in their own voice:
+
+- **AMER** → `sales:call-prep`, `sales:handle-objection`, `sales:deal-review`, `sales:close-plan`, `sales:pipeline-review`
+- **RAMOUS** → `sales:account-research`, `sales:competitive-intelligence`, `sales:account-plan`
+- **ABE** → `sales:forecast`, `sales:deal-slip-scenario`, `sales:win-loss-review`
+- **AMANAK** → [AI Hero](https://www.aihero.dev/skills-catalog) skills (`/grill-with-docs`, `/to-spec`, `/to-tickets`, `/implement-spec`, `/handoff`, `/retro`), plus Google [Harness²](https://github.com/google-research/harness2) to tune the TEAM itself in `META`
+- **MOTASEM / JOOBOO / YAZEED / SAVEE** → engineering, AWS, Bedrock and design skills
+
+No skill installed? The member answers unaided and says so. Edit the full map in [`references/skills-map.md`](references/skills-map.md).
+
+### 🐟 Market simulation (MiroFish)
+
+`SIMULATE` seeds [MiroFish](https://github.com/666ghj/MiroFish), an open-source multi-agent prediction engine, with your pricing page, launch post or policy text, then simulates how a crowd of agents reacts. ZOBRONSIKI and JAABARI attack the result, and every finding is tagged **simulated**, never *verified*. Setup and rules: [`references/simulation.md`](references/simulation.md)
+
+---
+
+## 📦 Install
+
+| Tool | How |
+|---|---|
+| **Claude Code** | `git clone https://github.com/kldnajjar/the-team ~/.claude/skills/the-team` (or `.claude/skills/the-team` for one project) |
+| **Claude app** (claude.ai / Desktop) | `git archive --format=zip --prefix=the-team/ -o the-team.zip HEAD`, then upload the zip in your Skills settings |
+| **Cursor, Windsurf, Cline, Gemini CLI, OpenCode** | Copy `SKILL.md` + `references/` to `.agents/skills/the-team/` (or the tool's rules folder) |
+| **Kiro** | Copy `SKILL.md` + `references/*.md` into `.kiro/steering/` with `inclusion: manual` front-matter; load with `#the-team` |
+
+**Optional extras:** the Claude **sales** plugin (for Market & Money), AI Hero skills via `npx skills add mattpocock/skills -y -g` (for AMANAK), a MiroFish instance (for `SIMULATE`), and a NotebookLM MCP (for `RESEARCH`, see [`references/research.md`](references/research.md)).
+
+---
+
+## 📁 Repo structure
+
+```text
+the-team/
+├── SKILL.md                  # entry point, always loaded
 ├── references/
-│   ├── roster.md            ← character cards — read when convening anyone
-│   ├── examples.md          ← worked sessions — read on first run
-│   ├── pillars.md           ← per-member Role/Task/Context/Reasoning/Output
-│   ├── triggers.md          ← full spec for each trigger
-│   └── research.md          ← research protocol + NotebookLM MCP setup
-└── kiro/
-    └── .kiro/steering/      ← Kiro steering-file variant
+│   ├── roster.md             # who everyone is
+│   ├── pillars.md            # each member's prompt: Role/Task/Context/Reasoning/Stop/Output
+│   ├── triggers.md           # every trigger, specified
+│   ├── parallel-mode.md      # modes, blind review, debate, decision journal
+│   ├── skills-map.md         # which installed skills each member uses
+│   ├── simulation.md         # SIMULATE with MiroFish
+│   ├── research.md           # research protocol + NotebookLM
+│   └── examples.md           # worked sessions
+├── assets/report-template.html # the HTML council report
+├── evals/test-prompts.md     # run after every edit
+├── CHANGELOG.md
+└── LICENSE
 ```
 
-The lazy-load design is intentional. `SKILL.md` stays thin; reference files load only when the session actually needs them. Sessions stay fast and cheap regardless of how big the roster gets.
+---
+
+## ❓ FAQ
+
+**Is it 17 separate AIs?** No. It's one skill. On Claude Code each voice runs as its own subagent, which makes the independence real; elsewhere one model voices them in turn.
+
+**Won't it be slow and expensive?** A name-call is a single answer. Only `DANGER` / `CRASH` / `ATTACK` convene the room, and `DEEP` is opt-in.
+
+**Can I make it mine?** Yes. Fork it and rewrite `references/roster.md`. Names, lanes and skills are all plain markdown. Run `evals/test-prompts.md` after editing.
+
+**Is the MiroFish simulation "real data"?** No. It's a model of a crowd. Use it to find what to test with real customers, not as proof.
+
+**Why the personal names?** It began as one person's council, modelled on people whose judgement he trusts. The structure is generic; the names are yours to change.
 
 ---
 
-## Member Quick Reference
+## 🤝 Contributing
 
-### CATYOUSHA — Assistant / Chief of Staff
-Runs every session. Opens, routes, tracks actions, closes with a clean synthesis. Always present — never counts as a seated voice.
+Issues and PRs welcome, especially new worked examples, skill mappings, and eval prompts. Keep `SKILL.md` lean: new detail goes in `references/`. Every PR that changes behaviour should add or update a line in `evals/test-prompts.md` and `CHANGELOG.md`.
 
-### JOOBOO — Hands-on CTO / Full-Stack
-Leanest way to build it. Team sizing, build-vs-buy, full-stack calls (React, Node/NestJS, APIs). Runs the open-source scan before anything new.
+## 🙏 Credits
 
-### MOTASEM — Principal Architect
-Architecture shape. Minimum cost at the reliability/scale the project actually needs. Decides the pattern; YASSER picks services, NAJI owns data.
+Council method inspired by [karpathy/llm-council](https://github.com/karpathy/llm-council) and the community council skills ([aiwithremy](https://github.com/aiwithremy/claude-skills-llm-council), [evisoft](https://github.com/evisoft/council), [torpedod](https://github.com/torpedod/claude-council)). Delivery workflow skills by [AI Hero / Matt Pocock](https://github.com/mattpocock/skills). Harness self-improvement by Google Research [Harness²](https://github.com/google-research/harness2) (Apache-2.0). Crowd simulation by [MiroFish](https://github.com/666ghj/MiroFish) (AGPL-3.0, used as an external service, not bundled).
 
-### YASSER — AWS & Hybrid/On-Prem
-Right AWS service, including new services the week they ship. Also owns on-prem and hybrid — data center stacks, migration paths, Direct Connect, sovereignty requirements.
+## 📄 License
 
-### NAJI — Database Architect & DBA
-Data tier end to end: database selection, modeling, replication/HA, scaling — and day-2 ops (tuning, backup, patching, monitoring).
-
-### RAID — Security
-Full surface: supply chain, CVEs, SBOM, compliance by region, threat modeling, hardening, incident response. Has standing flag rights even off-topic.
-
-### YAZEED — AI Lead
-Model selection, agents, RAG, evals, guardrails, AI cost. Lives on the frontier; knows what's real vs. hype.
-
-### ASEEL — QA / Release Confidence
-Test strategy, regression risk, ship/don't-ship call. The gate between built and deployed.
-
-### MOAMEN — Product & Competitive
-What to build next and the market read behind it. Gap analysis, competitor/pricing scans, MVP scoping.
-
-### AMANAK — Program Manager
-Sprint planning, cross-product resourcing, dependency mapping, delivery cadence, timeline risk.
-
-### RAMOUS — Strategy & Partnerships
-Positioning, moats, market entry, alliances, co-sell, channel/reseller, marketplace.
-
-### AMER — Sales
-Pipeline, live deals, objection handling, in-market pricing.
-
-### MAHER — Marketing
-Demand gen, channel selection, messaging — minimum spend, maximum reach.
-
-### MURAD — CFO
-Runway, burn, margins, unit economics, pricing models.
-
-### ABE — Capital & Scale
-Fundraising from pre-seed through growth equity: round sizing, valuation, term sheets, cap table, investor targeting, M&A/exit framing.
-
-### ANOOS — Personal Wealth
-Khaled's personal portfolio — ETFs, stocks, position sizing, personal angel bets. Never company capital (that's ABE).
-
-### AHMAD — Legal
-Contracts, corporate structure, IP, regulatory, data agreements, equity docs.
-
-### FERAS — Customer Success
-Post-sale: onboarding, time-to-value, adoption, churn, renewals, expansion.
-
-### SAVEE — Creative Director
-Brand identity, design language, narrative, deck and product UX feel. Translates vibes into structured design specs with real token reasoning.
-
-### LAMA — Technical Writer
-Docs, specs, READMEs, customer copy — and the plain-language pass on anything the team produces.
-
-### ARWA — Ethics / Islamic Lens
-Shariah-compliance filter, halal/haram, long-term values. Has standing flag rights even off-topic.
-
-### MOHAMMAD — Psychology
-Wellbeing, founder pressure, decision psychology, work–life balance.
-
-### TAMER — Gut-Check
-The gap between the "smart" answer and what you actually want. Asks the one blunt question everyone else is dancing around.
-
-### ZOBRONSIKI — The Contrarian
-Seats by default on `DANGER`, `CRASH`, `ATTACK`. Hunts the failure mode nobody's said out loud yet.
-
-### UNCLE SEINI — First Principles
-Seats by default on `DANGER`, `CRASH`, `ATTACK`. Asks whether the team is solving the right problem at all, before debating how.
-
-### JAABARI — The Outsider
-Seats by default on `DANGER`, `CRASH`, `ATTACK`. Zero-context read — catches the curse of knowledge before it ships externally.
-
----
-
-## Caveats
-
-**Quality is model-dependent.** The format works everywhere, but it leans on the host model's ability to hold distinct personas and run real friction. Sharpest on a strong frontier model; flatter on a weak one. Same files, different room.
-
-**NotebookLM integration is third-party.** The setup in [`references/research.md`](references/research.md) uses community-maintained MCP bridges that drive a real Chrome session. Review the repo before granting Google-account access, and never commit the resulting auth tokens — `.gitignore` already blocks the obvious paths.
-
-**This is a personal council, not a marketplace product.** It's tuned to one person's context and judgment. The value is the friction, not the headcount. The members evolve through use — `RANK` and `MEETING` are the growth log.
+[MIT](LICENSE) © 2026 Khaled Al Najjar

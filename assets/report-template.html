@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>the TEAM — Council Report</title>
+<style>
+  :root{
+    --bg:#f7f7f5; --card:#ffffff; --ink:#1b1d21; --muted:#5f6670; --line:#e4e4df;
+    --accent:#3b5bdb; --good:#2b8a3e; --warn:#c77700; --bad:#c92a2a;
+    --chair:#495057; --build:#1971c2; --market:#2f9e44; --craft:#ae3ec9; --values:#e8590c; --stress:#c92a2a;
+    --shadow:0 1px 2px rgba(0,0,0,.04),0 4px 16px rgba(0,0,0,.05);
+    --radius:14px;
+  }
+  @media (prefers-color-scheme:dark){
+    :root{ --bg:#111317; --card:#1a1d23; --ink:#e9ecef; --muted:#9aa3ad; --line:#2a2f37;
+      --accent:#748ffc; --shadow:none; }
+  }
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--bg);color:var(--ink);
+    font:15px/1.55 -apple-system,BlinkMacSystemFont,"Segoe UI",Inter,Roboto,"Noto Sans Arabic",sans-serif;}
+  .wrap{max-width:1080px;margin:0 auto;padding:40px 24px 80px}
+  header{margin-bottom:28px}
+  .eyebrow{display:flex;gap:8px;flex-wrap:wrap;align-items:center;margin-bottom:12px}
+  .pill{display:inline-flex;align-items:center;gap:6px;padding:3px 10px;border-radius:999px;
+    font-size:12px;font-weight:600;letter-spacing:.02em;border:1px solid var(--line);background:var(--card);color:var(--muted)}
+  .pill.trigger{background:var(--ink);color:var(--bg);border-color:var(--ink)}
+  h1{font-size:30px;line-height:1.2;margin:0 0 6px;letter-spacing:-.01em}
+  .sub{color:var(--muted);font-size:14px}
+  .meta{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:12px;margin-top:20px}
+  .stat{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:14px 16px;box-shadow:var(--shadow)}
+  .stat .k{font-size:11px;text-transform:uppercase;letter-spacing:.08em;color:var(--muted);font-weight:600}
+  .stat .v{font-size:15px;margin-top:4px;font-weight:600}
+  .gauge{height:6px;border-radius:6px;background:var(--line);margin-top:8px;overflow:hidden}
+  .gauge>span{display:block;height:100%;background:var(--accent)}
+  section{margin-top:32px}
+  h2{font-size:13px;text-transform:uppercase;letter-spacing:.1em;color:var(--muted);margin:0 0 12px;font-weight:700}
+  .card{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:20px 22px;box-shadow:var(--shadow)}
+  .verdict{border-left:5px solid var(--accent)}
+  .verdict .rec{font-size:20px;font-weight:650;line-height:1.35;margin:0 0 14px}
+  .next{display:flex;gap:10px;align-items:flex-start;background:color-mix(in srgb,var(--accent) 9%,transparent);
+    border-radius:10px;padding:12px 14px}
+  .next b{white-space:nowrap}
+  .grid3{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:14px}
+  .col h3{font-size:14px;margin:0 0 8px;display:flex;align-items:center;gap:8px}
+  .dot{width:9px;height:9px;border-radius:50%;display:inline-block}
+  ul{margin:0;padding-left:18px} li{margin:4px 0}
+  .voices{display:grid;grid-template-columns:repeat(auto-fill,minmax(310px,1fr));gap:14px}
+  .voice{border-top:4px solid var(--g,var(--chair))}
+  .voice .top{display:flex;justify-content:space-between;align-items:baseline;gap:8px;margin-bottom:8px}
+  .voice .name{font-weight:750;letter-spacing:.02em}
+  .voice .role{color:var(--muted);font-size:13px}
+  .voice .ans{margin:0 0 12px;white-space:pre-wrap}
+  .kv{font-size:13px;color:var(--muted);margin-top:6px} .kv b{color:var(--ink);font-weight:600}
+  .conf{font-size:11px;font-weight:700;padding:2px 8px;border-radius:999px;text-transform:uppercase;letter-spacing:.06em}
+  .conf.high{background:color-mix(in srgb,var(--good) 15%,transparent);color:var(--good)}
+  .conf.medium{background:color-mix(in srgb,var(--warn) 15%,transparent);color:var(--warn)}
+  .conf.low{background:color-mix(in srgb,var(--bad) 15%,transparent);color:var(--bad)}
+  table{width:100%;border-collapse:collapse;font-size:14px}
+  th,td{text-align:left;padding:10px 12px;border-bottom:1px solid var(--line);vertical-align:top}
+  th{font-size:11px;text-transform:uppercase;letter-spacing:.08em;color:var(--muted)}
+  tr.dominated td{opacity:.5;text-decoration:line-through}
+  .tag{font-size:11px;font-weight:700;padding:2px 8px;border-radius:6px;text-transform:uppercase}
+  .tag.verified{background:color-mix(in srgb,var(--good) 15%,transparent);color:var(--good)}
+  .tag.inferred{background:color-mix(in srgb,var(--warn) 15%,transparent);color:var(--warn)}
+  .tag.simulated{background:color-mix(in srgb,var(--craft) 15%,transparent);color:var(--craft)}
+  .debate{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+  @media (max-width:720px){.debate{grid-template-columns:1fr}}
+  .upside{border-left:5px solid var(--market)}
+  .status{font-weight:700;text-transform:uppercase;font-size:12px;letter-spacing:.06em}
+  pre{background:var(--bg);border:1px solid var(--line);border-radius:10px;padding:14px;overflow:auto;font-size:12.5px;margin:0}
+  button{font:inherit;font-size:12px;border:1px solid var(--line);background:var(--card);color:var(--ink);
+    border-radius:8px;padding:5px 10px;cursor:pointer;float:right;margin-bottom:8px}
+  a{color:var(--accent)}
+  footer{margin-top:48px;color:var(--muted);font-size:12px;text-align:center}
+  .hidden{display:none}
+  @media print{
+    body{background:#fff} .card,.stat{box-shadow:none;break-inside:avoid} button{display:none}
+    .wrap{padding:0}
+  }
+</style>
+</head>
+<body>
+<div class="wrap" id="app"></div>
+
+<!-- ============ REPLACE ONLY THE JSON BELOW (schema: references/parallel-mode.md) ============ -->
+<script id="council-data" type="application/json">
+{
+  "title": "Launch ObsMate as multi-tenant SaaS first, or self-hosted (Helm) first?",
+  "trigger": "DANGER",
+  "mode": "standard",
+  "date": "2026-11-09",
+  "engine": "parallel (subagents)",
+  "meta": {
+    "confidence": "medium",
+    "consensus": 3.2,
+    "dominant_assumption": "SaaS revenue can fund the self-hosted build",
+    "top_risk": "No regulated KSA buyer signs on SaaS"
+  },
+  "bias_flags": ["False either/or: both models can ship from one image"],
+  "verdict": {
+    "recommendation": "SaaS first on a shared deployment abstraction, with Helm one release behind. Flip the order the day a named regulated buyer commits.",
+    "next_move": "This week: list the three likeliest first customers and the deployment constraint for each.",
+    "agree": ["One shared image for both deployment models", "RAID's pre-install security review is real cost"],
+    "clash": ["RAMOUS: self-hosted is the entry ticket for regulated buyers", "JOOBOO: SaaS first protects a lean team"],
+    "blind_spots": ["UNCLE SEINI: nobody has named the first paying customer", "JAABARI: buyers can't tell the tier names apart"]
+  },
+  "upside": {
+    "play": "List the Helm chart on AWS Marketplace so self-hosted becomes a second revenue line, not a delay.",
+    "status": "deferred",
+    "why": "Worth it after the first regulated logo; revisit at the Q1 review."
+  },
+  "voices": [
+    {"name":"RAMOUS","role":"Product & Strategy","group":"market","label":"A","answer":"KSA banks won't send telemetry to our account. For them self-hosted is the entry ticket.","confidence":"high","key_assumption":"Target buyers are regulated","would_change_mind":"A bank accepting SaaS with in-Kingdom hosting"},
+    {"name":"JOOBOO","role":"CTO","group":"build","label":"C","answer":"SaaS first is one deployment we control. Self-hosted first with a lean team is where the roadmap dies.","confidence":"medium","key_assumption":"Team stays at current size","would_change_mind":"A funded self-hosted pilot"},
+    {"name":"MOTASEM","role":"Architect","group":"build","label":"B","answer":"Same image either way: the Fargate task becomes a Kubernetes Job. Build the abstraction once.","confidence":"high","key_assumption":"Investigation runtime is container-portable","would_change_mind":"Hard dependency on a SaaS-only AWS service"},
+    {"name":"ZOBRONSIKI","role":"Devil's advocate","group":"stress","label":"D","answer":"If no KSA logo signs on SaaS, you built the wrong first product for the buyer you want.","confidence":"medium","key_assumption":"","would_change_mind":""},
+    {"name":"IDREES","role":"Expansionist","group":"stress","label":"E","answer":"Why not both? Sell the chart through Marketplace and the 'no' buyers become a second revenue line.","confidence":"low","key_assumption":"Marketplace listing effort is small","would_change_mind":"Listing cost above one engineer-month"}
+  ],
+  "reviews": [
+    {"label":"B","rank":1,"strongest":"Removes the either/or entirely","blind_spot":"Ignores the support burden on customer clusters"},
+    {"label":"A","rank":2,"strongest":"Grounded in the real buyer","blind_spot":"No evidence a named buyer exists yet"},
+    {"label":"C","rank":3,"strongest":"Honest about team capacity","blind_spot":"Optimises for us, not the buyer"}
+  ],
+  "debate": {},
+  "options": [],
+  "evidence": [
+    {"claim":"Target regulated buyers require in-Kingdom data residency","tag":"inferred","source":""}
+  ],
+  "dissent": ["RAMOUS's point that the entry ticket is self-hosted was softened into a 'flip trigger', not adopted"],
+  "journal": {"id":"2026-11-09-saas-vs-helm","date":"2026-11-09","trigger":"DANGER","recommendation":"SaaS first; Helm one release behind","outcome":null}
+}
+</script>
+<!-- ============ END OF DATA ============ -->
+
+<script>
+(function(){
+  const D = JSON.parse(document.getElementById('council-data').textContent);
+  const app = document.getElementById('app');
+  const GROUP = {chair:'--chair',build:'--build',market:'--market',craft:'--craft',values:'--values',stress:'--stress'};
+
+  function el(tag, attrs, ...kids){
+    const n = document.createElement(tag);
+    if (attrs) for (const [k,v] of Object.entries(attrs)){
+      if (k === 'class') n.className = v;
+      else if (k === 'style') n.setAttribute('style', v);
+      else n.setAttribute(k, v);
+    }
+    for (const k of kids.flat()){
+      if (k === null || k === undefined || k === false) continue;
+      n.append(k instanceof Node ? k : document.createTextNode(String(k)));
+    }
+    return n;
+  }
+  const has = v => Array.isArray(v) ? v.length > 0 : (v && typeof v === 'object' ? Object.values(v).some(Boolean) : !!v);
+  const list = arr => el('ul', null, (arr||[]).map(x => el('li', null, x)));
+  const section = (title, ...body) => el('section', null, el('h2', null, title), ...body);
+  const conf = c => c ? el('span', {class:'conf ' + String(c).toLowerCase()}, c) : null;
+
+  document.title = 'the TEAM — ' + (D.title || 'Council report');
+
+  // Header
+  const m = D.meta || {};
+  const consensus = typeof m.consensus === 'number' ? m.consensus : null;
+  app.append(el('header', null,
+    el('div', {class:'eyebrow'},
+      D.trigger && el('span', {class:'pill trigger'}, D.trigger),
+      D.mode && el('span', {class:'pill'}, D.mode + ' mode'),
+      D.engine && el('span', {class:'pill'}, D.engine),
+      D.date && el('span', {class:'pill'}, D.date)),
+    el('h1', null, D.title || 'Council report'),
+    el('div', {class:'sub'}, 'Council report by the TEAM · chaired by CATYOUSHA'),
+    el('div', {class:'meta'},
+      m.confidence && el('div', {class:'stat'}, el('div',{class:'k'},'Council confidence'), el('div',{class:'v'}, conf(m.confidence))),
+      consensus !== null && el('div', {class:'stat'}, el('div',{class:'k'},'Consensus'),
+        el('div',{class:'v'}, consensus.toFixed(1) + ' / 5'),
+        el('div',{class:'gauge'}, el('span',{style:'width:'+Math.max(0,Math.min(100,consensus/5*100))+'%'}))),
+      m.dominant_assumption && el('div', {class:'stat'}, el('div',{class:'k'},'Dominant assumption'), el('div',{class:'v'}, m.dominant_assumption)),
+      m.top_risk && el('div', {class:'stat'}, el('div',{class:'k'},'Top risk'), el('div',{class:'v'}, m.top_risk))
+    )
+  ));
+
+  // Verdict
+  const V = D.verdict || {};
+  if (has(V)) {
+    app.append(section('Verdict',
+      el('div', {class:'card verdict'},
+        V.recommendation && el('p', {class:'rec'}, V.recommendation),
+        V.next_move && el('div', {class:'next'}, el('b', null, 'Next move →'), el('span', null, V.next_move)))));
+    const cols = [
+      ['Where the council agrees', V.agree, '--good'],
+      ['Where it clashes', V.clash, '--warn'],
+      ['Blind spots caught', V.blind_spots, '--bad']
+    ].filter(c => has(c[1]));
+    if (cols.length) app.append(el('section', null, el('div', {class:'grid3'},
+      cols.map(([t, items, c]) => el('div', {class:'card col'},
+        el('h3', null, el('span',{class:'dot',style:'background:var('+c+')'}), t), list(items))))));
+  }
+
+  // Upside
+  const U = D.upside || {};
+  if (has(U)) app.append(section('Upside check · IDREES',
+    el('div', {class:'card upside'},
+      U.play && el('p', {style:'margin:0 0 8px;font-weight:600'}, U.play),
+      U.status && el('div', null, el('span',{class:'status'}, U.status), U.why ? ' · ' + U.why : ''))));
+
+  // Bias flags
+  if (has(D.bias_flags)) app.append(section('Framing · bias audit', el('div', {class:'card'}, list(D.bias_flags))));
+
+  // Voices
+  if (has(D.voices)) app.append(section('The voices',
+    el('div', {class:'voices'}, D.voices.map(v =>
+      el('div', {class:'card voice', style:'--g:var(' + (GROUP[v.group] || '--chair') + ')'},
+        el('div', {class:'top'},
+          el('div', null, el('div',{class:'name'}, v.name || ''), el('div',{class:'role'}, [v.role, v.label ? 'answer ' + v.label : '', v.model].filter(Boolean).join(' · '))),
+          conf(v.confidence)),
+        v.answer && el('p', {class:'ans'}, v.answer),
+        v.key_assumption && el('div', {class:'kv'}, el('b',null,'Key assumption: '), v.key_assumption),
+        v.would_change_mind && el('div', {class:'kv'}, el('b',null,'Would change my mind: '), v.would_change_mind)
+      )))));
+
+  // Reviews
+  if (has(D.reviews)) {
+    const byLabel = {}; (D.voices||[]).forEach(v => { if (v.label) byLabel[v.label] = v.name; });
+    const rows = [...D.reviews].sort((a,b) => (a.rank||99) - (b.rank||99));
+    app.append(section('Blind peer review',
+      el('div', {class:'card', style:'padding:6px 8px'},
+        el('table', null,
+          el('thead', null, el('tr', null, ['Rank','Answer','Revealed','Strongest point','Biggest blind spot'].map(h => el('th', null, h)))),
+          el('tbody', null, rows.map(r => el('tr', null,
+            el('td', null, r.rank ?? ''), el('td', null, r.label || ''), el('td', null, byLabel[r.label] || ''),
+            el('td', null, r.strongest || ''), el('td', null, r.blind_spot || ''))))))));
+  }
+
+  // Debate
+  const DB = D.debate || {};
+  if (has(DB)) app.append(section('Debate',
+    el('div', {class:'debate'},
+      DB.prosecutor && el('div', {class:'card', style:'border-left:5px solid var(--bad)'}, el('h3',{style:'margin:0 0 6px;font-size:14px'},'Prosecutor · ZOBRONSIKI'), el('p',{style:'margin:0'}, DB.prosecutor)),
+      DB.defender && el('div', {class:'card', style:'border-left:5px solid var(--good)'}, el('h3',{style:'margin:0 0 6px;font-size:14px'},'Defender'), el('p',{style:'margin:0'}, DB.defender)))));
+
+  // Options
+  if (has(D.options)) app.append(section('Options ranked',
+    el('div', {class:'card', style:'padding:6px 8px'},
+      el('table', null,
+        el('thead', null, el('tr', null, ['Option','Score','What must be true'].map(h => el('th', null, h)))),
+        el('tbody', null, [...D.options].sort((a,b)=>(b.score||0)-(a.score||0)).map(o =>
+          el('tr', {class: o.dominated ? 'dominated' : ''}, el('td', null, o.option || ''), el('td', null, o.score ?? ''), el('td', null, o.must_be_true || ''))))))));
+
+  // Evidence
+  if (has(D.evidence)) app.append(section('Evidence',
+    el('div', {class:'card', style:'padding:6px 8px'},
+      el('table', null,
+        el('thead', null, el('tr', null, ['Claim','Tag','Source'].map(h => el('th', null, h)))),
+        el('tbody', null, D.evidence.map(e => el('tr', null,
+          el('td', null, e.claim || ''),
+          el('td', null, e.tag ? el('span',{class:'tag ' + String(e.tag).toLowerCase()}, e.tag) : ''),
+          el('td', null, /^https?:\/\//.test(e.source||'') ? el('a',{href:e.source, target:'_blank', rel:'noopener'}, (()=>{try{return new URL(e.source).hostname}catch(_){return e.source}})()) : (e.source || '—')))))))));
+
+  // Dissent
+  if (has(D.dissent)) app.append(section('Dissent ledger', el('div', {class:'card'}, list(D.dissent))));
+
+  // Journal
+  if (has(D.journal)) {
+    const txt = JSON.stringify(D.journal);
+    const pretty = JSON.stringify(D.journal, null, 2);
+    const btn = el('button', null, 'Copy');
+    btn.addEventListener('click', () => {
+      try { navigator.clipboard.writeText(txt).then(() => { btn.textContent = 'Copied'; }); }
+      catch(_) { btn.textContent = 'Select & copy'; }
+    });
+    app.append(section('Journal entry', el('div', {class:'card'}, btn, el('pre', {style:'clear:both;white-space:pre-wrap;word-break:break-word'}, pretty))));
+  }
+
+  app.append(el('footer', null, 'Generated by the TEAM · github.com/kldnajjar/the-team'));
+})();
+</script>
+</body>
+</html>
