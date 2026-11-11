@@ -1,5 +1,31 @@
 # Changelog
 
+## 2.5.0 — 2026-11-11
+
+Audit pass.
+
+### Fixed
+- **False triggers:** a trigger now needs CAPITALS at the start of the message, and a name only counts when the member is addressed. Mentions of real people who share a member's name no longer call a persona.
+- **Seating gaps:** `SIMULATE`, `RESEARCH` and `META` added to the stress-tester rule; `RANK` no longer contradicts it.
+- **`THINK`** was described as both "a few lines" and a five-part close; it is now Quick engine with a one-line-per-part close.
+- **Single-pass fallback** no longer skips the answer round or pretends to run a blind review.
+- **Peer review:** leads no longer score their own answer.
+- **Report:** `<` in JSON strings is escaped so quoted text can't break the page; chat hosts offer the report instead of building it every run; sample data now includes all seated voices.
+- Worked `DANGER` example now shows the confidence header and dissent line the protocol requires.
+- Stale roster count, a leftover JOOBOO stop condition, two typos.
+
+### Added
+- **Honest limits** (legal, finance, Shariah, wellbeing) and **ask before acting** rules.
+- `META` defaults to diff + regression prompts (`skill-creator`); Harness² marked experimental.
+- More companion skills mapped: `metrics-review`, `brand-review`, `engineering:documentation`, `engineering:debug`, `stakeholder-update`, `prompt-master`, `seo-audit`, AWS MCP tools.
+- Seven regression prompts (25–31).
+- **`SIMULATE` lite panel:** a built-in stand-in for when MiroFish isn't reachable, tagged *simulated (lite)*.
+
+### Changed
+- Worked examples and the sample report now use a made-up product ("Lumen") instead of real product internals. Member names are unchanged.
+- Per-member stack and region settings are now defaults, used only when the topic names none.
+- Kiro install uses Kiro's native skills folder (`~/.kiro/skills/`) instead of flattened steering files.
+
 ## 2.4.0 — 2026-11-09
 
 ### Added

@@ -152,13 +152,13 @@ These four have **no business lane** (not tech, not money, not legal). They exis
 
 ### JAABARI — The Outsider (the stranger)
 **Owns:** the zero-context read. He pretends he knows nothing about the product, AWS or the company, and flags anything that only makes sense to insiders. Essential before anything goes to a customer, investor or partner.
-**Example:** "In-Kingdom, Sovereign, self-hosted: to me those all sound like the same thing. What's the difference?"
+**Example:** "Private, Dedicated, self-hosted: to me those all sound like the same thing. What's the difference?"
 **Watch:** being too literal on genuinely technical material. SAVEE balances polish against precision.
 
 ### IDREES — The Expansionist (the upside voice)
 **Owns:** the ceiling. The other three stress-testers look for what's wrong; IDREES looks for what's being left on the table. He treats the plan as the minimum, looks for an "and" where the room assumed "or", and asks what this becomes if it works.
-**Example:** "SaaS or Helm?" IDREES: "Why not both from one image, and sell the Helm chart through AWS Marketplace? Then the regulated buyers who won't send you telemetry become a second revenue line, not a reason to delay."
-**Watch:** blue-sky ideas the team can't afford. ABE prices his upside JOOBOO checks it can be built, and AMANAK checks it fits the calendar.
+**Example:** "SaaS or Helm?" IDREES: "Why not both from one image, and sell the Helm chart through AWS Marketplace? Then the regulated buyers who won't send you their data become a second revenue line, not a reason to delay."
+**Watch:** blue-sky ideas the team can't afford. ABE prices his upside, JOOBOO checks it can be built, and AMANAK checks it fits the calendar.
 
 > **IDREES vs ZOBRONSIKI:** opposite forces, by design. ZOBRONSIKI asks how it fails; IDREES asks how big it could get. The close needs both, or it's either reckless or timid.
 > **IDREES vs RAMOUS:** RAMOUS picks where to play today, inside the market as it is. IDREES questions whether the ambition itself is too small.

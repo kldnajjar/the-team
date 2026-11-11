@@ -37,7 +37,7 @@ Rules:
 | Score an inbound lead | `sales:lead-triage` |
 | Customer health / QBR / renewals | `sales:customer-health`, `sales:renewal-radar` |
 | Deck, one-pager, leave-behind | `sales:create-an-asset` |
-| Also useful | `marketing:campaign-plan`, `marketing:email-sequence`, `marketing:content-creation` |
+| Also useful | `marketing:campaign-plan`, `marketing:email-sequence`, `marketing:content-creation`, `marketing:seo-audit`, `marketing:performance-report` |
 
 ### ABE: CFO, Finance & Capital
 | Question | Skill |
@@ -46,6 +46,7 @@ Rules:
 | What if this deal slips? | `sales:deal-slip-scenario` |
 | Coverage vs target | `sales:pipeline-review` |
 | Why do we win or lose? (revenue quality) | `sales:win-loss-review` |
+| Are the product numbers healthy? | `product-management:metrics-review` |
 | Build a financial model / sheet | Sheets artifact, or the `xlsx` skill when a file is required |
 
 ### AHMAD: Legal
@@ -75,7 +76,9 @@ npx skills add mattpocock/skills -y -g     # drop -g to install per project
 | Questions someone else must answer | `/to-questionnaire` |
 | Also useful | `product-management:sprint-planning`, `productivity:task-management`; Jira through the Atlassian connector for real tickets |
 
-**Google Harness²** ([google-research/harness2](https://github.com/google-research/harness2), Apache-2.0): a research framework that improves an agent's **harness** (system prompt, guardrails, memory, skills, tool guidance, scripts, subagents, plugins) while the model stays fixed. It proposes edits, tests them, and keeps an improvement library (`EXPERIENCE.md`).
+**`META` default:** AMANAK writes each proposed card edit as a diff and re-runs `evals/test-prompts.md`, using the `skill-creator` skill when installed. That works on every host today.
+
+**Google Harness² (experimental)** ([google-research/harness2](https://github.com/google-research/harness2), Apache-2.0): a research framework that improves an agent's **harness** (system prompt, guardrails, memory, skills, tool guidance, scripts, subagents, plugins) while the model stays fixed. It proposes edits, tests them, and keeps an improvement library (`EXPERIENCE.md`).
 
 AMANAK uses it in `META` to tune **the TEAM itself**: run a batch of past journal questions through the skill, let Harness² propose edits to `roster.md`, `pillars.md` or `triggers.md`, then bring the proposed diff to Khaled. He never auto-applies changes.
 
@@ -91,6 +94,7 @@ harness2-demo --output runs/demo --k 2      # no-credentials demo
 - Linux, Python 3.12 only.
 - Executors are OpenCode (default) and Codex (`--substrate cx`); Claude Code isn't a listed executor yet.
 - Execution substrates have **unrestricted network by default** and Codex runs with its sandbox off. Restrict egress, and never point it at client data.
+- The setup steps above come from third-party write-ups; check the repo's own README before running anything.
 - It's a research project, "not an officially supported Google product", and its benchmark gains are author-reported. Start with a handful of tasks; you pay all inference.
 
 ## Craft
@@ -110,6 +114,8 @@ SAVEE works the stack in order, **research → system → design → review → 
 | Review | Usability, hierarchy and consistency critique | `design:design-critique` | Claude design plugin |
 | Review | WCAG 2.1 AA: contrast, keyboard, touch targets, screen readers | `design:accessibility-review` | Claude design plugin |
 | Copy | Microcopy, errors, empty states, CTAs | `design:ux-copy`, then `humanizer` for docs and long copy | Claude design plugin / your skills |
+| Copy | Brand-voice check on marketing copy | `marketing:brand-review` | Claude marketing plugin |
+| Docs | READMEs, runbooks, API docs | `engineering:documentation` | Claude engineering plugin |
 | Handoff | Dev spec: tokens, props, states, breakpoints, edge cases | `design:design-handoff` | Claude design plugin |
 | Data | Charts, dashboards, KPI tiles | `dataviz` (and the **Dashboard** artifact type in the app) | Claude |
 
@@ -127,11 +133,11 @@ npx skills add vercel-labs/agent-skills@web-design-guidelines
 
 | Member | Companion skills |
 |---|---|
-| **CATYOUSHA** | `sales:daily-briefing` / `sales:weekly-wrap` (feeds `RANK`), `productivity:task-management` (feeds `PLAN`) |
-| **JOOBOO** | `engineering:code-review`, `engineering:testing-strategy`, `engineering:deploy-checklist`, `engineering:tech-debt`; AI Hero `/implement`, `/tdd`, `/diagnosing-bugs`, `/improve-codebase-architecture`, `/prototype` |
-| **MOTASEM** | `engineering:architecture`, `engineering:system-design`, `aws-sow-generator`, `aws-rapid-assessment` |
+| **CATYOUSHA** | `sales:daily-briefing` / `sales:weekly-wrap` (feeds `RANK`), `productivity:task-management` (feeds `PLAN`), `product-management:stakeholder-update` |
+| **JOOBOO** | `engineering:code-review`, `engineering:testing-strategy`, `engineering:deploy-checklist`, `engineering:tech-debt`, `engineering:debug`; AI Hero `/implement`, `/tdd`, `/diagnosing-bugs`, `/improve-codebase-architecture`, `/prototype` |
+| **MOTASEM** | `engineering:architecture`, `engineering:system-design`, `aws-sow-generator`, `aws-rapid-assessment`; AWS MCP tools for live pricing, regional availability and docs when connected |
 | **RAID** | `engineering:incident-response`, `engineering:code-review` (security focus) |
-| **YAZEED** | `bedrock-model-selector`, `aiaf-assessment-report`, `aws-data-ai-readiness-assessment` |
+| **YAZEED** | `bedrock-model-selector`, `prompt-master`, `aiaf-assessment-report`, `aws-data-ai-readiness-assessment` |
 | **RESEARCH** trigger | `deep-research`, `fact-checker` |
 | **SIMULATE** trigger | MiroFish (external engine, see `simulation.md`) |
 

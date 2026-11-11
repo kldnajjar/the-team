@@ -18,8 +18,8 @@ Read this when the `SIMULATE` trigger fires, or when a decision depends on **how
 
 | Use SIMULATE | Don't |
 |---|---|
-| "How will KSA bank buyers react to per-investigation pricing?" | Questions with one factual answer (use `RESEARCH`) |
-| "What happens to sentiment if we announce the Sovereign tier before the competitor?" | Internal engineering choices with no crowd involved |
+| "How will bank buyers react to usage-based pricing?" | Questions with one factual answer (use `RESEARCH`) |
+| "What happens to sentiment if we announce the enterprise tier before the competitor?" | Internal engineering choices with no crowd involved |
 | "How would the partner channel respond to a direct-sales motion?" | Anything where a real customer interview is cheap and available: talk to the human |
 | Stress-testing a launch message before spending on it | Personal decisions |
 
@@ -29,12 +29,21 @@ Read this when the `SIMULATE` trigger fires, or when a decision depends on **how
 
 1. **Frame.** The lane owner writes the prediction goal in one sentence and picks 1–5 seed documents (pricing page, launch post, policy text, competitor announcement).
 2. **Check cost.** Simulations are token-heavy. Start with **fewer than 40 rounds**, and confirm with Khaled before any larger run.
-3. **Run.** With the MiroFish UI or API reachable (browser or HTTP tool), upload the seed, set the goal, start the run and collect the report. If it isn't reachable, output a ready-to-paste **run sheet** (seed list + goal + suggested rounds + 3 questions to ask the ReportAgent) and stop.
+3. **Run.** With the MiroFish UI or API reachable (browser or HTTP tool), upload the seed, set the goal, start the run and collect the report. If it isn't reachable, offer two fallbacks and let Khaled pick: a ready-to-paste **run sheet** (seed list + goal + suggested rounds + 3 questions to ask the ReportAgent), or the **lite panel** below.
 4. **Interrogate.** Ask the ReportAgent the three questions, and interview 1–2 simulated agents from the segment that matters most.
 5. **Attack the result.** ZOBRONSIKI: what would make this simulation wrong (seed bias, persona skew, too few rounds)? JAABARI: would a real buyer actually behave like these agents?
 6. **Close.** Tag every finding **simulated**, never *verified*.
 
 **Output:** 3–5 simulated findings, each with how confident the team is in it → the one finding that changes the decision → the cheapest real-world check that would confirm it (one customer call, a landing-page test) → next move. Hand back to the calling trigger (`DANGER`, `THINK`, `CRASH`) or stand alone.
+
+## Lite panel (no MiroFish needed)
+
+A small stand-in that runs inside the TEAM, for when MiroFish isn't installed or the question doesn't justify a full run.
+
+1. The lane owner defines 6 to 8 audience archetypes from the real segment (for example: bank CISO, procurement lead, startup CTO, regulator, reseller), each with a goal, a budget limit and a fear.
+2. Each archetype reads **only the seed material**, as JAABARI does, and answers three questions: would you buy or back this, what stops you, what would change your mind. With subagents, run them in parallel; otherwise write all answers before comparing them.
+3. ZOBRONSIKI and JAABARI attack the panel exactly as in step 5.
+4. Tag every finding **simulated (lite)**. It is weaker evidence than a MiroFish run: no agent-to-agent interaction, no memory over time, and far fewer voices. Say so in the close.
 
 ## Setup (once)
 

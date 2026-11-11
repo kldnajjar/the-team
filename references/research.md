@@ -54,4 +54,4 @@ Claude Desktop (`~/Library/Application Support/Claude/claude_desktop_config.json
 
 **Option B: [`jacob-bd/notebooklm-mcp-cli`](https://github.com/jacob-bd/notebooklm-mcp-cli)** gives you setup commands instead of hand-written JSON (`nlm setup add claude-code`, `nlm setup add claude-desktop`, `nlm doctor`). For Kiro, `nlm setup add json` prints the same block as above.
 
-Once connected, point a member at a notebook directly: *"RAMOUS, pull the competitor-pricing notebook before we run DANGER on the Sovereign tier."* Results are tagged *verified*, with the notebook named as the source.
+Once connected, point a member at a notebook directly: *"RAMOUS, pull the competitor-pricing notebook before we run DANGER on the enterprise tier."* Results are tagged *verified*, with the notebook named as the source.

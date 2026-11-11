@@ -7,7 +7,7 @@
 [![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
 [![Agent Skill](https://img.shields.io/badge/format-Agent%20Skill-blue)](https://github.com/anthropics/skills)
 [![Works with](https://img.shields.io/badge/works%20with-Claude%20%C2%B7%20Claude%20Code%20%C2%B7%20Cursor%20%C2%B7%20Kiro-purple)](#-install)
-[![Version](https://img.shields.io/badge/version-2.4.0-orange)](CHANGELOG.md)
+[![Version](https://img.shields.io/badge/version-2.5.0-orange)](CHANGELOG.md)
 
 [Quick start](#-quick-start) · [Meet the team](#-meet-the-team) · [Triggers](#-triggers) · [How it works](#-how-it-works) · [Install](#-install) · [FAQ](#-faq)
 
@@ -127,7 +127,7 @@ Full character cards: [`references/roster.md`](references/roster.md) · Per-memb
 | `CRASH` | Pre-mortem: "it's a year later and this failed. Why?" | `CRASH: launch in 3 weeks` |
 | `ATTACK` | The strongest case against your position | `ATTACK: I think we should drop Azure` |
 | `RESEARCH` | Current, sourced facts before opinions | `RESEARCH: competitor pricing in KSA` |
-| `SIMULATE` | Crowd simulation of how people would react (MiroFish) | `SIMULATE: banks react to per-investigation pricing` |
+| `SIMULATE` | Crowd simulation of how people would react (MiroFish) | `SIMULATE: banks react to usage-based pricing` |
 | `RANK` | Daily pulse: top 3 things for today | `RANK` |
 | `MEETING` | Credit a past call that proved right | `MEETING` |
 | `META` | Tune the team using journal outcomes | `META` |
@@ -189,7 +189,7 @@ No skill installed? The member answers unaided and says so. Edit the full map in
 
 ### 🐟 Market simulation (MiroFish)
 
-`SIMULATE` seeds [MiroFish](https://github.com/666ghj/MiroFish), an open-source multi-agent prediction engine, with your pricing page, launch post or policy text, then simulates how a crowd of agents reacts. ZOBRONSIKI and JAABARI attack the result, and every finding is tagged **simulated**, never *verified*. Setup and rules: [`references/simulation.md`](references/simulation.md)
+`SIMULATE` seeds [MiroFish](https://github.com/666ghj/MiroFish), an open-source multi-agent prediction engine, with your pricing page, launch post or policy text, then simulates how a crowd of agents reacts. ZOBRONSIKI and JAABARI attack the result, and every finding is tagged **simulated**, never *verified*. No MiroFish? A built-in lite panel of 6 to 8 audience archetypes stands in. Setup and rules: [`references/simulation.md`](references/simulation.md)
 
 ---
 
@@ -200,7 +200,7 @@ No skill installed? The member answers unaided and says so. Edit the full map in
 | **Claude Code** | `git clone https://github.com/kldnajjar/the-team ~/.claude/skills/the-team` (or `.claude/skills/the-team` for one project) |
 | **Claude app** (claude.ai / Desktop) | `git archive --format=zip --prefix=the-team/ -o the-team.zip HEAD`, then upload the zip in your Skills settings |
 | **Cursor, Windsurf, Cline, Gemini CLI, OpenCode** | Copy `SKILL.md` + `references/` to `.agents/skills/the-team/` (or the tool's rules folder) |
-| **Kiro** | Copy `SKILL.md` + `references/*.md` into `.kiro/steering/` with `inclusion: manual` front-matter; load with `#the-team` |
+| **Kiro** | `git clone https://github.com/kldnajjar/the-team ~/.kiro/skills/the-team` (or `.kiro/skills/the-team` for one project). Kiro reads `SKILL.md` and loads `references/` on demand |
 
 **Optional extras:** the Claude **sales** plugin (for Market & Money), AI Hero skills via `npx skills add mattpocock/skills -y -g` (for AMANAK), `ui-ux-pro-max` and `web-design-guidelines` (for SAVEE), a MiroFish instance (for `SIMULATE`), and a NotebookLM MCP (for `RESEARCH`, see [`references/research.md`](references/research.md)).
 
@@ -237,6 +237,10 @@ the-team/
 **Can I make it mine?** Yes. Fork it and rewrite `references/roster.md`. Names, lanes and skills are all plain markdown. Run `evals/test-prompts.md` after editing.
 
 **Is the MiroFish simulation "real data"?** No. It's a model of a crowd. Use it to find what to test with real customers, not as proof.
+
+**Will it hijack normal messages?** No. A trigger is the word in capitals at the start of a message, and a name only counts when you address the member. "Email Ahmad the SOW" is about a real person, so nobody speaks.
+
+**Is it professional advice?** No. The lawyer, CFO, ethics and wellbeing voices name the issue and tell you when a qualified person has to sign off.
 
 **Why the personal names?** It began as one person's council, modelled on people whose judgement he trusts. The structure is generic; the names are yours to change.
 

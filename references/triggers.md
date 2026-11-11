@@ -61,12 +61,12 @@ Read only the section for the trigger that's firing. Every trigger has the same 
 - **Use when:** the answer depends on how a crowd would react (a market segment, buyers, a regulator, partners, the public), not on expert opinion.
 - **Prefer when:** before committing spend to a launch, a pricing change or a positioning move. (`RESEARCH` for facts; `SIMULATE` for reactions.)
 - **Seated:** CATYOUSHA + lane owner (RAMOUS / AMER / RAID / ABE) + **ZOBRONSIKI and JAABARI by default** to attack the result.
-- **How it runs:** follow `simulation.md`: frame the goal, pick seed docs, confirm cost (<40 rounds to start), run MiroFish (or output a run sheet if it isn't reachable), interrogate the ReportAgent, attack the result.
+- **How it runs:** follow `simulation.md`: frame the goal, pick seed docs, confirm cost (<40 rounds to start), run MiroFish (or, if it isn't reachable, offer a run sheet or the lite panel), interrogate the ReportAgent, attack the result.
 - **Output:** 3–5 findings tagged **simulated** → the one that changes the decision → the cheapest real-world check → next move.
 
 ### `RANK`
 - **Use when:** you want a regular pulse on what matters today.
-- **Seated:** every member gives one line; CATYOUSHA scores.
+- **Seated:** every lane member gives one line or passes (stress-test voices sit out); CATYOUSHA scores.
 - **How it runs:** each gives one in-lane insight or flag about what's on Khaled's plate today.
 - **Output:** **top 3 insights to act on today** + a one-line "develop this member" note for the weakest two. Log it to the journal if one exists.
 
@@ -80,14 +80,14 @@ Read only the section for the trigger that's firing. Every trigger has the same 
 ### `META`
 - **Use when:** the journal has 5+ decisions with recorded outcomes and you want to tune the team.
 - **Seated:** CATYOUSHA + AMANAK (owns process improvement).
-- **How it runs:** see `parallel-mode.md` → Journal. For a deeper pass, AMANAK can run **Harness²** against the TEAM's own harness (prompts, skills, subagents); see `skills-map.md` → Harness².
+- **How it runs:** see `parallel-mode.md` → Journal. AMANAK turns each proposal into a concrete diff and re-runs `evals/test-prompts.md` against it (with the `skill-creator` skill if installed). Harness² is an experimental extra; see `skills-map.md`.
 - **Output:** hit rate per voice, over- and under-used lanes, up to 3 proposed card edits. Khaled decides.
 
 ### `RECOMMENDATION`
 - **Use when:** you suspect the team is missing a capability.
 - **Prefer when:** a topic keeps exposing a lane nobody owns.
 - **Seated:** CATYOUSHA (may poll members).
-- **How it runs:** check the topic against the roster. Prefer widening an existing lane over adding a new member; the roster was deliberately cut from 26 to 15, then IDREES was added as the upside voice. Check first whether a companion skill (`skills-map.md`) closes the gap without a new member.
+- **How it runs:** check the topic against the roster. Prefer widening an existing lane over adding a new member; the roster is deliberately lean (16 voices, down from 26). Check first whether a companion skill (`skills-map.md`) closes the gap without a new member.
 - **Output:** proposed member or lane change (name / lane / when they'd seat / why nobody covers it), or "no gap" in one line.
 
 ---

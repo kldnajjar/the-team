@@ -32,13 +32,13 @@ CATYOUSHA offers to escalate Standard → Deep once, if council confidence comes
   WOULD CHANGE MY MIND: <evidence that flips it>
   ```
 
-**2. Anonymous peer review (parallel).** Relabel answers **A, B, C…** with names and lane words stripped, using a new random mapping every run. Each lead reviews the full set:
+**2. Anonymous peer review (parallel).** Relabel answers **A, B, C…** with names and lane words stripped, using a new random mapping every run. Each lead reviews every answer except their own:
 > *"Which answer is strongest and why? Which has the biggest blind spot? What did all of them miss? Rate overall consensus 1–5. At most 120 words. Don't guess authors."*
 
 **3. Debate (conditional).** Take the mean consensus score.
 - **≥ 4 (the room agrees):** ZOBRONSIKI prosecutes the consensus, then the top-ranked lead defends it, one turn each. High agreement is when groupthink hides, so this is where the debate pays off.
 - **< 4:** skip the debate; the disagreement is already on the table.
-- **Deep mode:** always debate, then rank the options, including IDREES's expanded option and any others the voices surfaced,, mark dominated options, and name what would have to be true for each survivor.
+- **Deep mode:** always debate, then rank the options, including IDREES's expanded option and any others the voices surfaced, mark dominated options, and name what would have to be true for each survivor.
 
 **4. Close (CATYOUSHA).** Restore names and run the merit audit against the peer rankings. Call out where a voice's confidence didn't match how peers rated it.
 - **Chair may side with a lone dissenter** if the reasoning is stronger. Consensus isn't the goal; clarity is.
@@ -50,9 +50,9 @@ CATYOUSHA offers to escalate Standard → Deep once, if council confidence comes
 - **Journal:** append the entry (below).
 - **HTML report (Standard and Deep):** copy `assets/report-template.html` and replace **only** the JSON inside `<script id="council-data" type="application/json">` with this run's data (schema below). The page renders itself, with no other edits and no external assets.
   - *Claude Code:* write `the-team-report-<YYYYMMDD-HHMM>-<slug>.html` plus `…-transcript.md` (full run including the A/B/C map) in the working folder, and `open` the HTML on macOS.
-  - *Claude app:* publish the filled HTML as an artifact.
+  - *Claude app and other chat hosts:* offer the report once after the close; build and publish it only on a yes, because it costs a full rewrite of the template.
   - *Quick mode / name-calls:* no report unless Khaled asks.
-- Keep JSON strings plain text; the template escapes everything.
+- Keep JSON strings plain text; the template escapes them when it renders. Write every `<` inside a string as `\u003c`, so quoted web text containing `</script>` can't break the page.
 
 ### Report data schema
 
@@ -91,7 +91,7 @@ Agent(description="TEAM: JAABARI",    prompt="<card + customer-facing material O
 # then one review Agent per lead with the shuffled A/B/C set
 ```
 
-No subagents? Fall back silently to single-pass and still run steps 0, 3 (as one in-thread exchange), 4 and 5.
+No subagents? Fall back silently to single-pass. Write every seated voice's answer before any voice reacts to another (step 1). Replace the blind review with each lead naming the strongest objection to another lead's position, plus one consensus score from CATYOUSHA (step 2). Then run steps 3 to 5 as written. Set `engine` to `single-pass` and leave `reviews` out of the report: one model can't review its own answers blind, so don't present it as if it did.
 
 ## Optional: multi-model council
 
@@ -102,7 +102,7 @@ Model diversity beats persona diversity. If a LiteLLM or OpenRouter proxy is ava
 Backs `MEETING`, `RANK` and step 0. Location: `.the-team/journal.jsonl` in the project, or `~/.the-team/journal.jsonl` for personal decisions (git-ignored). One JSON object per line:
 
 ```json
-{"id":"2026-11-09-saas-vs-helm","date":"2026-11-09","trigger":"DANGER","mode":"standard","question":"SaaS or Helm first for ObsMate?","seated":["RAMOUS","JOOBOO","MOTASEM","ZOBRONSIKI","UNCLE SEINI","JAABARI"],"consensus":3.2,"confidence":"medium","recommendation":"SaaS first on shared abstraction; Helm one release behind","dissent":["RAMOUS: self-hosted is the entry ticket for regulated buyers"],"next_move":"List top-3 first customers and their deployment constraint","review_on":"2027-01-15","outcome":null}
+{"id":"2026-11-09-saas-vs-helm","date":"2026-11-09","trigger":"DANGER","mode":"standard","question":"SaaS or Helm first for Lumen?","seated":["RAMOUS","JOOBOO","MOTASEM","ZOBRONSIKI","UNCLE SEINI","JAABARI","IDREES"],"consensus":3.2,"confidence":"medium","recommendation":"SaaS first on shared abstraction; Helm one release behind","dissent":["RAMOUS: self-hosted is the entry ticket for regulated buyers"],"next_move":"List top-3 first customers and their deployment constraint","review_on":"2027-01-15","outcome":null}
 ```
 
 - **Record an outcome:** `outcome <id>: <what happened>`. CATYOUSHA sets `outcome` and notes which voice called it, including any dissenter.

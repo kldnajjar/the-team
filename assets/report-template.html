@@ -86,7 +86,7 @@
 <!-- ============ REPLACE ONLY THE JSON BELOW (schema: references/parallel-mode.md) ============ -->
 <script id="council-data" type="application/json">
 {
-  "title": "Launch ObsMate as multi-tenant SaaS first, or self-hosted (Helm) first?",
+  "title": "Launch Lumen as multi-tenant SaaS first, or self-hosted (Helm) first?",
   "trigger": "DANGER",
   "mode": "standard",
   "date": "2026-11-09",
@@ -95,7 +95,7 @@
     "confidence": "medium",
     "consensus": 3.2,
     "dominant_assumption": "SaaS revenue can fund the self-hosted build",
-    "top_risk": "No regulated KSA buyer signs on SaaS"
+    "top_risk": "No regulated buyer signs on SaaS"
   },
   "bias_flags": ["False either/or: both models can ship from one image"],
   "verdict": {
@@ -111,11 +111,13 @@
     "why": "Worth it after the first regulated logo; revisit at the Q1 review."
   },
   "voices": [
-    {"name":"RAMOUS","role":"Product & Strategy","group":"market","label":"A","answer":"KSA banks won't send telemetry to our account. For them self-hosted is the entry ticket.","confidence":"high","key_assumption":"Target buyers are regulated","would_change_mind":"A bank accepting SaaS with in-Kingdom hosting"},
+    {"name":"RAMOUS","role":"Product & Strategy","group":"market","label":"A","answer":"Regulated banks won't send data to our account. For them self-hosted is the entry ticket.","confidence":"high","key_assumption":"Target buyers are regulated","would_change_mind":"A bank accepting SaaS with in-country hosting"},
     {"name":"JOOBOO","role":"CTO","group":"build","label":"C","answer":"SaaS first is one deployment we control. Self-hosted first with a lean team is where the roadmap dies.","confidence":"medium","key_assumption":"Team stays at current size","would_change_mind":"A funded self-hosted pilot"},
-    {"name":"MOTASEM","role":"Architect","group":"build","label":"B","answer":"Same image either way: the Fargate task becomes a Kubernetes Job. Build the abstraction once.","confidence":"high","key_assumption":"Investigation runtime is container-portable","would_change_mind":"Hard dependency on a SaaS-only AWS service"},
-    {"name":"ZOBRONSIKI","role":"Devil's advocate","group":"stress","label":"D","answer":"If no KSA logo signs on SaaS, you built the wrong first product for the buyer you want.","confidence":"medium","key_assumption":"","would_change_mind":""},
-    {"name":"IDREES","role":"Expansionist","group":"stress","label":"E","answer":"Why not both? Sell the chart through Marketplace and the 'no' buyers become a second revenue line.","confidence":"low","key_assumption":"Marketplace listing effort is small","would_change_mind":"Listing cost above one engineer-month"}
+    {"name":"MOTASEM","role":"Architect","group":"build","label":"B","answer":"Same image either way: the container job becomes a Kubernetes Job. Build the abstraction once.","confidence":"high","key_assumption":"The runtime is container-portable","would_change_mind":"Hard dependency on a SaaS-only AWS service"},
+    {"name":"ZOBRONSIKI","role":"Devil's advocate","group":"stress","label":"D","answer":"If no regulated logo signs on SaaS, you built the wrong first product for the buyer you want.","confidence":"medium","key_assumption":"","would_change_mind":""},
+    {"name":"IDREES","role":"Expansionist","group":"stress","label":"E","answer":"Why not both? Sell the chart through Marketplace and the 'no' buyers become a second revenue line.","confidence":"low","key_assumption":"Marketplace listing effort is small","would_change_mind":"Listing cost above one engineer-month"},
+    {"name":"UNCLE SEINI","role":"Reframer","group":"stress","label":"F","answer":"The question isn't SaaS or Helm. It's who the first paying customer is.","confidence":"medium","key_assumption":"","would_change_mind":""},
+    {"name":"JAABARI","role":"Outsider","group":"stress","label":"G","answer":"Private, Dedicated, self-hosted: from outside these sound like the same thing.","confidence":"medium","key_assumption":"","would_change_mind":""}
   ],
   "reviews": [
     {"label":"B","rank":1,"strongest":"Removes the either/or entirely","blind_spot":"Ignores the support burden on customer clusters"},
@@ -125,7 +127,7 @@
   "debate": {},
   "options": [],
   "evidence": [
-    {"claim":"Target regulated buyers require in-Kingdom data residency","tag":"inferred","source":""}
+    {"claim":"Target regulated buyers require in-country data residency","tag":"inferred","source":""}
   ],
   "dissent": ["RAMOUS's point that the entry ticket is self-hosted was softened into a 'flip trigger', not adopted"],
   "journal": {"id":"2026-11-09-saas-vs-helm","date":"2026-11-09","trigger":"DANGER","recommendation":"SaaS first; Helm one release behind","outcome":null}
